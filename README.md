@@ -31,17 +31,19 @@ donde `ACCESS_TOKEN` es el access token del cliente.
 Para crear algo, necesitas incluir el `Content-Type` header y la información JSON:
 
 ```shell
-curl -H 'Authentication: bearer ACCESS_TOKEN ' \
+curl -H 'Username: xxxx' -H 'Apikey: xxxx' \
   -H 'Content-Type: application/json' \
-  -H 'User-Agent: MyApp (name@email.com)' \
-  -d '{ "name": "My new product" }' \
+  -H 'Accept: application/json' \
+  -d 'key=value&...' \
   https://www.woowup.com/apiv2/98765/contents
 ```
 
 API resources
 -----------------
 
-* [Registración](https://github.com/woowup/api/blob/master/api/registration.md)
+* [Registración](https://github.com/woowup/docs/blob/master/api/registracion.md)
+* [Contenidos](https://github.com/woowup/docs/blob/master/api/contenidos.md)
+
 
 
 Contacto
