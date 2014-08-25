@@ -43,7 +43,7 @@ API resources
 
 * [Registración y usuarios](https://github.com/woowup/docs/blob/master/api/registracion.md)
 * [Contenidos](https://github.com/woowup/docs/blob/master/api/contenidos.md)
-* [Participaciones](https://github.com/woowup/docs/blob/master/api/participaciones.md)
+* [Puntos](https://github.com/woowup/docs/blob/master/api/puntos.md)
 
 
 
