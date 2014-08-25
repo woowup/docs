@@ -1,4 +1,4 @@
-Registración
+Contenidos
 ======
 
 
@@ -7,17 +7,14 @@ Endpoints
 
 ### GET /content
 
-Receive a single Store.
+Consulta un contenido en particular
 
 
 | Parameter      | Mandatory | Explanation                                                                                      |
 | ------ | ------ | ------ |
 | content_id | Si | Id de un contenido |
-| with_actions | No | Valores posibles: 1|0
-Por defecto su valor es 1
-En caso de valer 1, el contenido es devuelto junto con sus acciones correspondientes, caso contrario solo se devuelve la información del contenido. |
-| userpoints | No | Solo necesario cuando el Servicio MercadoPago está activo.
-Calcula dinámicamente los points y price necesarios para el canje de un beneficio según los puntos de un usuario. |
+| with_actions | No | Valores posibles: 1 ó 0. Por defecto su valor es 1 En caso de valer 1, el contenido es devuelto junto con sus acciones correspondientes, caso contrario solo se devuelve la información del contenido. |
+| userpoints | No | Solo necesario cuando el Servicio MercadoPago está activo. Calcula dinámicamente los points y price necesarios para el canje de un beneficio según los puntos de un usuario. |
 
 
 #### GET /content
@@ -69,3 +66,84 @@ Calcula dinámicamente los points y price necesarios para el canje de un benefic
   }
 }
 ```
+
+### GET /transactions
+
+Consulta la transaacciones para un usuario.
+
+
+| Parameter      | Mandatory | Explanation                                                                                      |
+| ------ | ------ | ------ |
+| userapp_id | Si | Id del usuario en la app |
+
+
+#### GET /transactions
+
+`HTTP/1.1 200 OK`
+
+```json
+...
+  {
+    "id":"2191",
+    "points":"20000",
+    "action_id":null,
+    "concept_id":"3",
+    "description":"342",
+    "created":"2014-02-26 14:41:22"
+  },
+  {
+    "id":"2199",
+    "points":"20000",
+    "action_id":null,
+    "concept_id":"3",
+    "description":null,
+    "created":"2014-02-28 09:58:56"
+  },
+  {
+    "id":"2206",
+    "points":"100",
+    "action_id":null,
+    "concept_id":"6",
+    "description":"1127",
+    "created":"2013-10-29 14:16:12"
+  }
+...
+```
+
+### GET /connectedservices
+
+Consulta los servicios configurados, en caso de estarlos se retorna la configuración cargada (MP, TiendaNube, ...)
+
+
+
+#### GET /connectedservices
+
+`HTTP/1.1 200 OK`
+
+```json
+...
+{
+  "mp":{
+    "status":true,
+    "data":{
+      "id":"1",
+      "app_id":"13",
+      "app_code":"CONTEST",
+      "mp_enabled":"1",
+      "mp_clientid":"....",
+      "mp_clientsecret":"....",
+      "mp_percentage":"5",
+      "created":"2013-12-27 14:26:38",
+      "vt_enabled":"1",
+      "vt_name":"complot",
+      "vt_appkey":"....",
+      "vt_apptoken":"...",
+      "vt_lastprocessedtime":null
+    }
+  }
+}
+...
+```
+
+
+

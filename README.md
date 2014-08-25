@@ -9,29 +9,29 @@ Cómo empezar?
 Debes seguir estos pasos:
 
 1. Registrarte como partner en [WoowUp](http://www.woowup.com).
-2. Una vez registrado accederas a la form de autenticación.
-3. Leer el documento [Cómo autenticarse](#authentication).
+2. Una vez registrado accederas a las keys de autenticación.
 4. Leer la documentación de la API para comprender que puedes hacer con la integración.
 
 Cómo hacer las peticiones
 ----------------
 
-Todas las URLs tendrán la forma `https://www.woowup.com/apiv2/{app_id}`. Si necesitas acceder a una consulta sobre la app_id 98765 entonces la consulta tendra la forma `https://www.woowup.com/apiv2/98765`
+Todas las URLs tendrán la forma `https://www.woowup.com/apiv2/{app_id}`. Si necesitas acceder a una consulta sobre la app_id 98765 entonces la consulta empezará con `https://www.woowup.com/apiv2/98765`
 
-Puedes hacer una consulta en CURL con
+Puedes hacer una consulta GET en CURL puedes utilizar
 
 ```shell
-curl -H 'Authentication: bearer ACCESS_TOKEN ' \
-  -H 'User-Agent: MyApp (name@email.com)' \
+curl -H 'Username: .....' \
+  -H 'Apikey: .....' \
+  -H 'Content-Type: application/json' \
   https://www.woowup.com/apiv2/98765
 ```
 
-donde `ACCESS_TOKEN` es el access token del cliente.
 
-Para crear algo, necesitas incluir el `Content-Type` header y la información JSON:
+Para una petición POST, necesitas incluir el `Accept` header y la información POST:
 
 ```shell
-curl -H 'Username: xxxx' -H 'Apikey: xxxx' \
+curl -H 'Username: .....' \
+  -H 'Apikey: .....' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -d 'key=value&...' \
@@ -41,8 +41,9 @@ curl -H 'Username: xxxx' -H 'Apikey: xxxx' \
 API resources
 -----------------
 
-* [Registración](https://github.com/woowup/docs/blob/master/api/registracion.md)
+* [Registración y usuarios](https://github.com/woowup/docs/blob/master/api/registracion.md)
 * [Contenidos](https://github.com/woowup/docs/blob/master/api/contenidos.md)
+* [Participaciones](https://github.com/woowup/docs/blob/master/api/participaciones.md)
 
 
 
