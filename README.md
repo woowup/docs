@@ -32,7 +32,6 @@ Para una petición POST, necesitas incluir el `Accept` header y la información 
 ```shell
 curl -H 'Username: .....' \
   -H 'Apikey: .....' \
-  -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -d 'key=value&...' \
   https://www.woowup.com/apiv2/98765/contents

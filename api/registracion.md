@@ -127,6 +127,7 @@ Retorna la información de un usuario buscando por email
 
 | Parámetro      | Obligatorio | Explicación                                                                                      |
 | ------ | ------ | ------ |
+| service | Si | 1 es FB, 2 es Classic |
 | service_uid | Si | ID del usuario |
 
 
@@ -137,30 +138,7 @@ Retorna la información de un usuario buscando por email
 ```json
 {
   "status":true,
-  "data":{
-    "user":{
-      "points":"4256",
-      "name":"Juan Villca",
-      "first_name":"Juan",
-      "last_name":"Villca",
-      "email":"juan.villca@devellabs.com",
-      "locale":"en_GB",
-      "timezone":"-3",
-      "createtime":"2013-10-22 20:15:17",
-      "fid":"1413631099",
-      "service":null,
-      "service_uid":null,
-      "service_pass":null,
-      "status":"1",
-      "gender":"1",
-      "birthday":"1981-11-21",
-      "hometown":"Buenos Aires, Argentina",
-      "location":"Buenos Aires, Argentina",
-      "country_id":"13",
-      "userapp_id":"17",
-      "app_id":"13"
-    }
-  }
+  "message":"User already exists"
 }
 ```
 
