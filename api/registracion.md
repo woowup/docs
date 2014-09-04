@@ -120,6 +120,51 @@ Retorna la información de un usuario buscando por email
 ```
 
 
+### GET /user_by_uid
+
+Retorna la información de un usuario buscando por User ID
+
+
+| Parámetro      | Obligatorio | Explicación                                                                                      |
+| ------ | ------ | ------ |
+| uid | Si | User ID |
+
+
+#### GET /user_by_email
+
+`HTTP/1.1 200 OK`
+
+```json
+{
+  "status":true,
+  "data":{
+    "user":{
+      "points":"4256",
+      "name":"Juan Villca",
+      "first_name":"Juan",
+      "last_name":"Villca",
+      "email":"juan.villca@devellabs.com",
+      "locale":"en_GB",
+      "timezone":"-3",
+      "createtime":"2013-10-22 20:15:17",
+      "fid":"1413631099",
+      "service":null,
+      "service_uid":null,
+      "service_pass":null,
+      "status":"1",
+      "gender":"1",
+      "birthday":"1981-11-21",
+      "hometown":"Buenos Aires, Argentina",
+      "location":"Buenos Aires, Argentina",
+      "country_id":"13",
+      "userapp_id":"17",
+      "app_id":"13"
+    }
+  }
+}
+```
+
+
 ### GET /is_user
 
 Retorna la información de un usuario buscando por email
