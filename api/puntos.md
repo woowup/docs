@@ -29,13 +29,13 @@ Suma puntos a un usuario buscandolo por su ID en la aplicación. Retorna el id d
 }
 ```
 
-### POST /add_sale_points_by_uid
+### POST /add_sale_points_by_dni
 
-Suma puntos a un usuario buscandolo por su ID en la aplicación, especificando el detalle de la factura. Retorna el id de la transacción
+Suma puntos a un usuario buscandolo por su DNI registrado en la aplicación, especificando el detalle de la factura. Retorna el id de la transacción
 
 | Parámetro      | Obligatorio | Explicación                                                                                      |
 | ------ | ------ | ------ |
-| uid | Si | Id del usuario en la aplicación |
+| dni | Si | DNI del usuario al registrarse |
 | points | Si | Puntos a sumar |
 | nrofactura | Si | Nro de la factura |
 | factura | No | Detalles de la factura en formato json |
@@ -47,10 +47,10 @@ El formato del detalle de la factura deber ser:
 
 Por ejemplo
 ```json
-curl -H 'Username: xx' -H 'Apikey: xxxx' -H 'Accept: application/json' -d 'uid=31824477&points=100&nrofactura=1234&factura=[{"codigo":"12", "producto":"prod1", "cantidad":2, "precio": 10.3},{"codigo":"13", "producto":"prod3", "cantidad":1, "precio": 1.3}]'  https://www.woowup.com/apiv2/13/add_sale_points_by_uid
+curl -H 'Username: xx' -H 'Apikey: xxxx' -H 'Accept: application/json' -d 'dni=33333333&points=100&nrofactura=1234&factura=[{"codigo":"12", "producto":"prod1", "cantidad":2, "precio": 10.3},{"codigo":"13", "producto":"prod3", "cantidad":1, "precio": 1.3}]'  https://www.woowup.com/apiv2/13/add_sale_points_by_dni
 ```
 
-#### POST /add_sale_points_by_uid
+#### POST /add_sale_points_by_dni
 
 `HTTP/1.1 200 OK`
 
