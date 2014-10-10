@@ -44,6 +44,7 @@ API resources
 * [Beneficios, cupones](https://github.com/woowup/docs/blob/master/api/beneficios.md)
 * [Contenidos](https://github.com/woowup/docs/blob/master/api/contenidos.md)
 * [Puntos](https://github.com/woowup/docs/blob/master/api/puntos.md)
+* [Club](https://github.com/woowup/docs/blob/master/api/club.md)
 
 
 
