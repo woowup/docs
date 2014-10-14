@@ -46,6 +46,11 @@ API resources
 * [Puntos](https://github.com/woowup/docs/blob/master/api/puntos.md)
 * [Club](https://github.com/woowup/docs/blob/master/api/club.md)
 
+Magento Connect
+-----------------
+Woowup dispone de una interfaz para sumar puntos desde el popular E-Commerce Magento.
+Para acceder a la documentaci&oacute;n [haga click aqu&iacute;](https://github.com/woowup/docs/blob/master/magento_connect/readme.md).
+
 
 
 Contacto
