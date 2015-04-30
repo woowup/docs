@@ -45,6 +45,7 @@ API resources
 * [Contenidos](https://github.com/woowup/docs/blob/master/api/contenidos.md)
 * [Puntos](https://github.com/woowup/docs/blob/master/api/puntos.md)
 * [Club](https://github.com/woowup/docs/blob/master/api/club.md)
+* [Webhooks](https://github.com/woowup/docs/blob/master/api/webhooks.md)
 
 Magento Connect
 -----------------
