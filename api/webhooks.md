@@ -20,8 +20,8 @@ Donde *$data* es un JSON con cada campo del CustomForm y su respuesta
 
 ```json
 {
-  "email": 'johndoe@gmail.com',
-  "dni": '24586932',
+  "email": "johndoe@gmail.com",
+  "dni": "24586932",
   ... 
 }
 ```
@@ -43,6 +43,6 @@ En caso de que sea *False*, deben enviarse también los siguientes parámetros:
 
 {
   "status": false,
-  "message": 'Tu DNI no se encuentra registrado'
+  "message": "Tu DNI no se encuentra registrado"
 }
 ```
