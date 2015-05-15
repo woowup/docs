@@ -1,23 +1,26 @@
-WoowUp REST API
-====================
+Integrating your site with WoowUp
+=================================
 
-Este documento describe en forma breve la API para consulta de datos de contenidos, acciones, transacciones y a la vez describe los métodos para ejecución de acciones.
+Here you will find how to get information about contents, actions, transactions and users of your app.
+Also, you will find how to register a new user, set a coupon status and add points to a user.
 
-Cómo empezar?
-----------------
+##Getting started
 
-Debes seguir estos pasos:
+####Authentication
 
-1. Registrarte como partner en [WoowUp](http://www.woowup.com).
-2. Una vez registrado accederas a las keys de autenticación.
-4. Leer la documentación de la API para comprender que puedes hacer con la integración.
+1. Sign up as a partner in [WoowUp](http://www.woowup.com).
+2. Once registered, get your Apikey from Connect tab in the administrator.
 
-Cómo hacer las peticiones
-----------------
+For any call, you must use 2 headers:
+ 
+ * __Username:__ your app_id 
+ * __Apikey:__ the apikey of point 2.
 
-Todas las URLs tendrán la forma `https://www.woowup.com/apiv2/{app_id}`. Si necesitas acceder a una consulta sobre la app_id 98765 entonces la consulta empezará con `https://www.woowup.com/apiv2/98765`
+####General usage
 
-Puedes hacer una consulta GET en CURL puedes utilizar
+All URLs must be like `https://www.woowup.com/apiv2/{app_id}`. 
+
+So, for example, if your app is id=98765, you should do a GET request like
 
 ```shell
 curl -H 'Username: .....' \
@@ -26,35 +29,38 @@ curl -H 'Username: .....' \
   https://www.woowup.com/apiv2/98765
 ```
 
-
-Para una petición POST, necesitas incluir el `Accept` header y la información POST:
+For a POST request, you have to include the 'Accept: application/json' header
 
 ```shell
 curl -H 'Username: .....' \
   -H 'Apikey: .....' \
   -H 'Accept: application/json' \
   -d 'key=value&...' \
-  https://www.woowup.com/apiv2/98765/contents
+  https://www.woowup.com/apiv2/98765/add_points...
 ```
 
-API resources
------------------
+##How To
 
-* [Registración y usuarios](https://github.com/woowup/docs/blob/master/api/registracion.md)
-* [Beneficios, cupones](https://github.com/woowup/docs/blob/master/api/beneficios.md)
-* [Contenidos](https://github.com/woowup/docs/blob/master/api/contenidos.md)
-* [Puntos](https://github.com/woowup/docs/blob/master/api/puntos.md)
+* [Register a new user](https://github.com/woowup/docs/blob/master/api/examples.md#register-a-new-user)
+* [Add points](https://github.com/woowup/docs/blob/master/api/examples.md#add-points)
+* [Add sale points](https://github.com/woowup/docs/blob/master/api/examples.md#add-sale-points)
+* [Get a user](https://github.com/woowup/docs/blob/master/api/examples.md#get-a-user)
+* [Get user's transactions](https://github.com/woowup/docs/blob/master/api/get-users-transactions)
+* [Mark coupon as changed](https://github.com/woowup/docs/blob/master/api/get-users-transactions)
+
+##API resources
+
+* [Users](https://github.com/woowup/docs/blob/master/api/registracion.md)
+* [Benefits and coupons](https://github.com/woowup/docs/blob/master/api/beneficios.md)
+* [Contents](https://github.com/woowup/docs/blob/master/api/contenidos.md)
+* [Points](https://github.com/woowup/docs/blob/master/api/puntos.md)
 * [Club](https://github.com/woowup/docs/blob/master/api/club.md)
 * [Webhooks](https://github.com/woowup/docs/blob/master/api/webhooks.md)
 
-Magento Connect
------------------
-Woowup dispone de una interfaz para sumar puntos desde el popular E-Commerce Magento.
-Para acceder a la documentaci&oacute;n [haga click aqu&iacute;](https://github.com/woowup/docs/blob/master/magento_connect/readme.md).
+##Magento Connect
 
+You can add points points directly from your Magento E-Commerce. For further information, check [here](https://github.com/woowup/docs/blob/master/magento_connect/readme.md).
 
-
-Contacto
-----------------------
+##Contact
 
 Puedes contactarnos por cualquier duda respecto a la API en <mailto:api@woowup.com>.
