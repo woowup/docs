@@ -4,20 +4,22 @@ With WoowUp API you will be able to enhenance, extend and integrate your Loyalty
 Here you will find examples and a detailed endpoint list that will let you create connectors to the system you use, implement new ways of earning points, integrate the program to your web and much more. 
 
 ##Getting started
+This is a REST-style API that uses JSON for serialization.
+
+1. Sign up as a partner in [WoowUp](http://www.woowup.com).
+2. Once registered, get your Apikey from the Connect tab in the administrator module.
+3. Read the API docs to understand what you can do.
 
 ####Authentication
 
-1. Sign up as a partner in [WoowUp](http://www.woowup.com).
-2. Once registered, get your Apikey from Connect tab in the administrator.
-
-For any call, you must use 2 headers:
+In any call to the API you must use 2 headers:
  
  * __Username:__ your app_id 
  * __Apikey:__ the apikey of point 2.
 
 ####General usage
 
-All URLs must be like `https://www.woowup.com/apiv2/{app_id}`. 
+All URLs start with `https://www.woowup.com/apiv2/{app_id}`. 
 
 So, for example, if your app is id=98765, you should do a GET request like
 
