@@ -2,7 +2,7 @@
 ###Enhance your loyalty program experience and create the program you need.
 
 With WoowUp API you will be able to enhenance, extend and integrate your Loyalty Program.
-Here you will find examples and a detailed endpoint list that will let you create connectors to the system you use, implement new ways of earning points, integrate the program to your web and much more. 
+Here you will find examples and a detailed endpoint list that will let you create connectors to the systems you use, implement new ways of earning points, integrate the program to your web or app and much more. 
 
 ##Getting started
 This is a REST-style API that uses JSON for serialization.
