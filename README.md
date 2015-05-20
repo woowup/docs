@@ -65,4 +65,4 @@ You can add points points directly from your Magento E-Commerce. For further inf
 
 ##Contact
 
-Puedes contactarnos por cualquier duda respecto a la API en <mailto:api@woowup.com>.
+Contact us to talk about the API to <mailto:ayuda@woowup.com>.
