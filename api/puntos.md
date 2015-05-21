@@ -158,6 +158,35 @@ curl -H 'Username: xx' -H 'Apikey: xxxx' -H 'Accept: application/json' -d 'dni=3
 }
 ```
 
+### POST /cancel_invoice
+
+Cancela una factura, revirtiendo los puntos obtenidos en el comprobante original
+
+| Parámetro      | Obligatorio | Explicación        |
+| ------ | ------ | ------ |
+| app_id | Si          | Id del club en la aplicación |
+| nrofactura | Si | Nro de la factura |
+
+Por ejemplo
+```json
+curl -H 'Username: xx' -H 'Apikey: xxxx' -H 'Accept: application/json' -d 'nrofactura=1234'  https://www.woowup.com/apiv2/13/cancel_invoice
+```
+
+#### POST /cancel_invoice
+
+`HTTP/1.1 200 OK`
+
+```json
+{
+  "status":true,
+  "data":{
+    "transaction_id":"2424"
+  }
+}
+```
+
+
+
 ### GET /transactions
 
 Devuelve las trasacciones por usuario
