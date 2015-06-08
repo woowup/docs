@@ -58,7 +58,7 @@ It will look something like this:
     
     for each ($order in $sales)
     {
-        // Now it's the same as in the previes example.
+        // Now it's the same as in the previous example.
         
         $email = 'replace-it-with-your-customer-email@domain.com'; 
             
