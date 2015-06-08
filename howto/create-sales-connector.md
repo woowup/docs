@@ -7,7 +7,7 @@ It's very easy to create a custom connector to your own e-commerce or sales syst
 
 If you can identify in your app the place where the Purchase Order is marked as payed (or any other state you want), you need to call WoowUp right there to register the transaction and give the related points to the customer.
 
-First get your Apikey and Contest Id from the Connect tab in the administrator module to include it in the following code:
+First, remember to get your Apikey and Contest Id from the Connect tab in the administrator module of WoowUp to include it in the following code:
 
 ```
     // $contestId = 'REPLACE WITH YOUR CONTEST ID';
@@ -39,7 +39,7 @@ Get the email of the customer and assign it to $email in the following code to l
             );
 
         $points = ceil($salePoints * floor($total);
-        WoowUpAPI::commitPointsToWoowup($uId, $points, $orderNumber, $orderDetail);
+        WoowUpAPI::commitPointsToWoowup($contestId, $apiKey, $uId, $points, $orderNumber, $orderDetail);
     }else{
         //User not found, not currently registered in your loyalty program
     }
@@ -82,7 +82,7 @@ It will look something like this:
                 );
     
             $points = ceil($salePoints * floor($total);
-            WoowUpAPI::commitPointsToWoowup($uId, $points, $orderNumber, $orderDetail);
+            WoowUpAPI::commitPointsToWoowup($contestId, $apiKey, $uId, $points, $orderNumber, $orderDetail);
         }else{
             //User not found, not currently registered in your loyalty program
         }
