@@ -12,7 +12,7 @@ First get your Apikey and Contest Id from the Connect tab in the administrator m
 ```
     // $contestId = 'REPLACE WITH YOUR CONTEST ID';
     // $apiKey = REPLACE WITH YOUR APIKEY; 
-´´´
+```
 
 Get the email of the customer and assign it to $email in the following code to look for the customer in your Loyalty Program Database:
 
