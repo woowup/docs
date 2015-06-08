@@ -5,7 +5,7 @@ It's very easy to create a custom connector to your own e-commerce or sales syst
 
 ####Process one Purchase Order at a time.
 
-If you can identify in your app the place where the Purchase Order is makred as payed (or any other state you profere), you need to call WoowUp right there to register the transaction and give the related points to the customer.
+If you can identify in your app the place where the Purchase Order is marked as payed (or any other state you profere), you need to call WoowUp right there to register the transaction and give the related points to the customer.
 
 First get your Apikey and Contest Id from the Connect tab in the administrator module to include it in the following code:
 
