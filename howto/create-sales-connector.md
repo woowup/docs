@@ -1,4 +1,4 @@
-#How to create a custom connector with your sales system
+#Create a custom connector with your e-commerce or sales software
 ###Overview
 
 It's very easy to create a custom connector to your own e-commerce or sales system. Here we'll cover the steps to build it.
