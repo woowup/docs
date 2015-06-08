@@ -19,7 +19,6 @@ To start rember to do the following:
         
     $uId = $this->getWoowupUIdByMail($email);
 
-
     if (!empty($uId)){
         $salePoints = $this->getContestSalePoints();
         if( !$salePoints ) return;
