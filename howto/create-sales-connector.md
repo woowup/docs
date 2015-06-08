@@ -43,7 +43,7 @@ Get the email of the customer and assign it to $email in the following code to l
     }else{
         //User not found, not currently registered in your loyalty program
     }
-´´´
+```
 
 ####Process all the Purchase Orders together.
 
