@@ -1,7 +1,7 @@
 #Create a custom connector to reward your own actions.
 ###Overview
 
-It's very probably that you may want to reward your customers with points for doing an action that is not included in the original functionality of WoowUp. For example, give points for answering a survery or uploading a photo to Instagram with a specific #hastag.
+It's very probably that you may want to reward your customers with points for doing an action that is not included in the original functionality of WoowUp. For example, you may wanto to give points for answering a survery or uploading a photo to Instagram with a specific #hastag.
 The good news is that it's very easy to create such a custom connector. Let's take a look at the steps to build it.
 
 For the purpouse of this article, let's supouse you want to reawrd your customers for answering a survey.
