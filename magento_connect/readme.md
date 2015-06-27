@@ -5,7 +5,7 @@ Instalacion
 ----------------
 Debes seguir estos pasos:
 
-- [Bajar el archivo .zip](https://github.com/woowup/docs/raw/master/magento_connect/Woowup-Connect-0.2.7.tgz)
+- [Bajar el archivo .zip](https://github.com/woowup/docs/raw/master/magento_connect/Woowup_Connect-0.2.7.tgz)
 - Instalar el conector vía Magento Connect
 
 ![Instalación](https://github.com/silvioq/docs/raw/master/magento_connect/images/01-Instalación.png)

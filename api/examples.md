@@ -210,3 +210,13 @@ curl -H 'Username: 98765' \
 | price      | No       | Purchase price. Only valid for purchase order |
 | branch     | No       | Branch name (It must be already registered in WoowUp) |
 
+(**) Concepts ids avaliable:
+
+|  id | Concept  |
+| --- | -------- |
+| 3   | Manual assignment |
+| 4   | Registration |
+| 5   | Referral |
+| 10  | Survey |
+| 11  | Purchase order |
+

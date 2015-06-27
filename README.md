@@ -43,6 +43,8 @@ curl -H 'Username: .....' \
 
 ##How To
 
+* [Create a custom connector with your e-commerce or sales software](https://github.com/woowup/docs/blob/master/howto/create-sales-connector.md)
+* [How to reward your own actions](https://github.com/woowup/docs/blob/master/howto/reward-own-actions.md)
 * [Register a new user](https://github.com/woowup/docs/blob/master/api/examples.md#register-a-new-user)
 * [Add points](https://github.com/woowup/docs/blob/master/api/examples.md#add-points)
 * [Add sale points](https://github.com/woowup/docs/blob/master/api/examples.md#add-sale-points)
