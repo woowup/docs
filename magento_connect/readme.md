@@ -5,10 +5,10 @@ Instalacion
 ----------------
 Debes seguir estos pasos:
 
-- [Bajar el archivo .zip](https://github.com/woowup/docs/raw/master/magento_connect/Woowup_Connect-0.2.8.tgz)
+- [Bajar el archivo .zip](https://github.com/woowup/docs/raw/master/magento_connect/Woowup_Connect-0.3.0.tgz)
 - Instalar el conector vía Magento Connect
 
-![Instalación](https://github.com/silvioq/docs/raw/master/magento_connect/images/01-Instalación.png)
+![Instalación](https://github.com/woowup/docs/raw/master/magento_connect/images/01-Instalación.png)
 
 
 - Para poder tener acceso a la API de woowup desde tu aplicacion, deberas tener una API key que te proveeremos. Para ello solicitala por mail a: <mailto:api@woowup.com> si es que todavia no te la hemos enviado.
