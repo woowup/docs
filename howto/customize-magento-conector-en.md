@@ -1,19 +1,18 @@
-# Customize Woowup-Connect Magento Extension
+# How to override the default behaviour of the Woowup-Connect Magento Extension
 
 ### Overview
 
-The world wide eCommerce system Magento is able to implement custom processes and extensions, based on Event-Observer
+Magento is able to implement custom processes and extensions, based on Event-Observer
 pattern design.
 
-The Woowup-Connect extension includes two new events, which let run custom code for manage custom rules.
+The Woowup-Connect extension includes two new events, which lets you run custom code to manage custom rules.
 
 The events are
 - woowup_after_get_points
 - woowup_before_order_points
 
 ### woowup_after_get_points
-It's runned after to get the point multiplier on Woowup platform.
-It can modify this multiplier with custom rules, coded into the event.
+It lets you implement code to change the multiplier that is applied to product price to calculate the points on Woowup platform.
 
 The event receive a product as parameter. This is the current product from frontend
 
@@ -32,8 +31,8 @@ Example
 ```
 
 ### woowup_before_order_points
-It's runned before to calculate credit points for an order. It can modify the total credit points.
-If the function modifies the calculated points, the extension would send that quantity to woowup platform 
+It let's you implement code to calculate how many points should be assigned for an order. 
+If the function modifies the calculated points, the extension would send that quantity to WoowUp. 
 
 Example:
 
