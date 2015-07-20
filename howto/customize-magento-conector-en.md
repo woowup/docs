@@ -35,6 +35,8 @@ Example
 It's runned before to calculate credit points for an order. It can modify the total credit points.
 If the function modifies the calculated points, the extension would send that quantity to woowup platform 
 
+The setPoints method set the total credit points for an order, like as the example.
+
 Example:
 
 ```  
