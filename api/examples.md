@@ -10,7 +10,7 @@ For example, if in your app you have an user with the identificator = 0014823, y
 curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Content-Type: application/json' \
-  https://www.woowup.com/apiv2/98765/is_user?service=1&service_uid=0014823
+  https://admin.woowup.com/apiv2/98765/is_user?service=1&service_uid=0014823
 ```
 
 | Parameter   | Description               |
@@ -37,7 +37,7 @@ curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Accept: application/json' \
   -d 'uid=0014823&pass=1234&email=johndoe@gmail.com&first_name=john&last_name=doe' \
-  https://www.woowup.com/apiv2/98765/register_user_classic
+  https://admin.woowup.com/apiv2/98765/register_user_classic
 ```
 
 The POST method to use is **/register_user_classic**
@@ -94,7 +94,7 @@ If you want to have more information about your user before adding him points, y
 curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Content-Type: application/json' \
-  https://www.woowup.com/apiv2/98765/user_by_uid?uid=0014823
+  https://admin.woowup.com/apiv2/98765/user_by_uid?uid=0014823
 ```
 
 | Parameter   | Description               |
@@ -107,7 +107,7 @@ Or:
 curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Content-Type: application/json' \
-  https://www.woowup.com/apiv2/98765/user_by_email?email=johndoe@gmail.com
+  https://admin.woowup.com/apiv2/98765/user_by_email?email=johndoe@gmail.com
 ```
 
 | Parameter   | Description               |
@@ -160,7 +160,7 @@ curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Accept: application/json' \
   -d 'userapp_id=13247&points=120&concept="Donating"' \
-  https://www.woowup.com/apiv2/98765/add_points
+  https://admin.woowup.com/apiv2/98765/add_points
 ```
 
 The POST method to use is **/add_points**
@@ -197,7 +197,7 @@ curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Accept: application/json' \
   -d 'userapp_id=13247&points=120&concept="Donating"' \
-  https://www.woowup.com/apiv2/98765/add_points_by_uid
+  https://admin.woowup.com/apiv2/98765/add_points_by_uid
 ```
 
 |  Parameter | Required | Description  |
