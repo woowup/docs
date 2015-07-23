@@ -35,7 +35,6 @@ Then, in case you got the user does not exist, you have to do a POST request to 
 ```shell
 curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
-  -H 'Accept: application/json' \
   -d 'uid=0014823&pass=1234&email=johndoe@gmail.com&first_name=john&last_name=doe' \
   https://admin.woowup.com/apiv2/98765/register_user_classic
 ```
