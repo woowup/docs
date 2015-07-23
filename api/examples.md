@@ -10,7 +10,7 @@ For example, if in your app you have an user with the identificator = 0014823, y
 curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Content-Type: application/json' \
-  https://admin.woowup.com/apiv2/98765/is_user?service=1&service_uid=0014823
+  'https://admin.woowup.com/apiv2/98765/is_user?service=1&service_uid=0014823'
 ```
 
 | Parameter   | Description               |
