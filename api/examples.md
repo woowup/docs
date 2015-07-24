@@ -84,6 +84,22 @@ It returns a JSON object with 2 fields: **status**, **data**
   }
 }
 ```
+##Saving asociated registration form
+Next step, you'll need to complet the registration form defined in your administration console and asociate it to the newly registered user. Use the userapp_id returned by register_user_classic:
+
+```shell
+curl -H 'Username: 98765' \
+  -H 'Apikey: .....' \
+  -d 'email=johndoe@gmail.com' \
+  https://admin.woowup.com/apiv2/98765/save_cf/?userapp_id=1234521
+```
+The response will be:
+```json
+{
+  "status":true,
+  "message":"Se guardo la respuesta con exito"
+}
+```
 
 ##Getting user information
 
