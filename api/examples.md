@@ -85,7 +85,7 @@ It returns a JSON object with 2 fields: **status**, **data**
 }
 ```
 ##Saving asociated registration form
-Next step, you'll need to complet the registration form defined in your administration console and asociate it to the newly registered user. Use the userapp_id returned by register_user_classic:
+Next step, you'll need to complete the registration form defined in your administration console and asociate it to the newly registered user. Use the userapp_id returned by register_user_classic:
 
 ```shell
 curl -H 'Username: 98765' \
