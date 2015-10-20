@@ -72,7 +72,7 @@ Inicializa un usuario en Woowup, quedando su registración pendiente. El usuario
 
 | Parámetro      | Obligatorio | Explicación                                                                                      |
 | ------ | ------ | ------ |
-| uid | Si | DNI del usuario |
+| uid | Si | ID del usuario |
 | email | Si | Email |
 | first_name | Si | Nombre |
 | last_name | Si | Apellido |
