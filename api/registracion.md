@@ -11,7 +11,7 @@ Retorna los datos del usuario registrado.
 
 | Parámetro      | Obligatorio | Explicación                                                                                      |
 | ------ | ------ | ------ |
-| uid | Si | DNI del usuario |
+| uid | Si | ID del usuario |
 | pass | Si | Pin del usuario |
 | email | Si | Email |
 | first_name | Si | Nombre |
