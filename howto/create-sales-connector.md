@@ -1,18 +1,27 @@
 #Create a custom connector with your e-commerce or sales software
 ###Overview
 
-It's very easy to create a custom connector to your own e-commerce or sales system. Here we'll cover the steps to build it.
+It's easy to connect your own e-commerce or sales system with WoowUp. Here we'll cover the steps you need to follow showing a PHP example.
 
-####Process one Purchase Order at a time.
+These are the steps:
 
-If you can identify in your app the place where the Purchase Order is marked as payed (or any other state you want), you need to call WoowUp right there to register the transaction and give the related points to the customer.
-
-First, remember to get your Apikey and Contest Id from the Connect tab in the administrator module of WoowUp to include it in the following code:
+1) Get your Apikey and Program Id from the Connect tab in the administrator module of WoowUp. You'll need this info to call all the APIs endpoints. For this exmample, will use the following:
 
 ```
-    // $contestId = 'REPLACE WITH YOUR CONTEST ID';
-    // $apiKey = REPLACE WITH YOUR APIKEY; 
+    $apiKey = '55db302267baf5826b6a91c81f4219dafbe49115176d34f0f3cfebbb6ba44521';
+    $programId = 14;
+    $apiUrl = 'https://admin.woowup.com/apiv2/';
 ```
+
+1) Identify in your code the place where the Purchase Order is marked as payed (or any other state you want). 
+2) Get the info of the customer to reward. Here is an example but you will need to get the info from your system: 
+
+        $customerID='testemail@test.com';
+        $customerEmail='testemail@test.com';
+        $customerFirstName = 'Jhon';
+        $customerLastname = 'Doe';
+
+Look that in this example we are using the email as the ID to identify the customer in WoowUp. But you can use any other ID as long as it univocally identify your customer (cell phone number, CPF (Brasil) / DNI (Argentina) / RUT (Chile) / Social Security Number (USA), etc). Remember first to go to the administrator panel -> Configure -> Registraton Form and configure your ID Field (default is email).
 
 Get the email of the customer and assign it to $email in the following code to look for the customer in your Loyalty Program Database:
 
