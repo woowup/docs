@@ -12,8 +12,9 @@ $programId = 14;
 $apiUrl = 'https://admin.woowup.com/apiv2/';
 ```
 
-1) Identify in your code the place where the Purchase Order is marked as payed (or any other state you want). 
-2) Get the info of the customer to reward. Here is an example but you will need to get the info from your system: 
+2) Identify in your code the place where the Purchase Order is marked as payed (or any other state you want). 
+
+3) Get the info of the customer to reward. Here is an example but you will need to get the info from your system: 
 
 ```
 $customerID='testemail@test.com';
@@ -24,13 +25,13 @@ $customerLastname = 'Doe';
 
 Look that in this example we are using the email as the ID to identify the customer in WoowUp. But you can use any other ID as long as it univocally identify your customer (cell phone number, CPF (Brasil) / DNI (Argentina) / RUT (Chile) / Social Security Number (USA), etc). Remember first to go to the administrator panel -> Configure -> Registraton Form and configure your ID Field (default is email).
 
-3) Look for the customer. Is he already in your program or he is new?
+4) Look for the customer. Is he already in your program or he is new?
 
 ```
 $uId = $WoowUpAPI->getCustumerByID($customerID);
 ```
 
-3b - optional) If it is a new customer, you can add it to your program. If you do that, you will add it in a state we call it "initialized" but not registered. What it means is that the first time this customer will try to navigate the reward's catalog to redeem his points, he will first have to complete the registration form.
+4b) (optional) If it is a new customer, you can add it to your program. If you do that, you will add it in a state we call it "initialized" but not registered. What it means is that the first time this customer will try to navigate the reward's catalog to redeem his points, he will first have to complete the registration form.
 
 ```
 if( empty($uId ) )
@@ -48,7 +49,7 @@ if( empty($uId ) )
 
 Or you may prefer that only registered customers in your Loyalty Program may be able to earn points, as in airlines programs where you only earn points if you have registered.
 
-4) Get the info of the order and calculate how many points your customer earned. This is just an example but look at the format you will need to use for the order detail.
+5) Get the info of the order and calculate how many points your customer earned. This is just an example but look at the format you will need to use for the order detail.
 
 ```
 $orderNumber='1034242';
@@ -61,13 +62,13 @@ $orderDetail[] = array(
 ```
 NOTE: The order detail is optional. But if you include it then you will be able to take adavantage of the filters in the Database tab to create filters and segments as well as see all the customer behaviour in his profile.
 
-5) Get how many points you will give for each $:
+6) Get how many points you will give for each $:
 
 ```
 $salePoints = $WoowUpAPI->getSalePoints();
 ```
 
-6) Finally reward the customer:
+7) Finally reward the customer:
 ```
 $WoowUpAPI->rewardCustomerWithPoints($uId, $orderTotal * $salePoints, $orderNumber, $orderDetail);
 ```
