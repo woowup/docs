@@ -1,5 +1,4 @@
-#Create a custom connector with your e-commerce or sales software
-###Overview
+#Connect your e-commerce or sales software with WoowUp
 
 It's easy to connect your own e-commerce or sales system with WoowUp. Here we'll cover the steps you need to follow showing a PHP example.
 
