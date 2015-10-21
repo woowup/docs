@@ -16,84 +16,59 @@ These are the steps:
 1) Identify in your code the place where the Purchase Order is marked as payed (or any other state you want). 
 2) Get the info of the customer to reward. Here is an example but you will need to get the info from your system: 
 
+```
         $customerID='testemail@test.com';
         $customerEmail='testemail@test.com';
         $customerFirstName = 'Jhon';
         $customerLastname = 'Doe';
+```
 
 Look that in this example we are using the email as the ID to identify the customer in WoowUp. But you can use any other ID as long as it univocally identify your customer (cell phone number, CPF (Brasil) / DNI (Argentina) / RUT (Chile) / Social Security Number (USA), etc). Remember first to go to the administrator panel -> Configure -> Registraton Form and configure your ID Field (default is email).
 
-Get the email of the customer and assign it to $email in the following code to look for the customer in your Loyalty Program Database:
+3) Look for the customer. Is he already in your program or he is new?
 
 ```
-    $email = 'replace-it-with-your-customer-email@domain.com'; 
-        
-    $uId = WoowUpAPI::getUIdByMail($email);
-
-    if (!empty($uId)){
-        $salePoints = WoowUpAPI::getContestSalePoints($contestId, $apiKey);
-        if( !$salePoints ) return;
-
-        // In the following example, replace the values for the actual data from your Purchase Order;
-        $total = 50;
-        $orderNumber=5;
-        $orderDetail = array();
-
-        // You may add multiple items to the order detail.
-        $orderDetail[] = array(
-                'sku' => 'SK02313',
-                'productName' => 'Vanilla cake',
-                'Quantity' => 1,
-                'Price' => 16
-            );
-
-        $points = ceil($salePoints * floor($total);
-        WoowUpAPI::commitPointsToWoowup($contestId, $apiKey, $uId, $points, $orderNumber, $orderDetail);
-    }else{
-        //User not found, not currently registered in your loyalty program
-    }
+$uId = $WoowUpAPI->getCustumerByID($customerID);
 ```
 
-####Process all the Purchase Orders together.
-
-Other approach is to process the Porchase Orders as a batch. For example, all the PO of the current day, all together, at the and of the day. 
-
-In this case, you'll need to create a process and run it, for example, once a day at the end of the day. 
-It will look something like this:
+3b - optional) If it is a new customer, you can add it to your program. If you do that, you will add it in a state we call it "initialized" but not registered. What it means is that the first time this customer will try to navigate the reward's catalog to redeem his points, he will first have to complete the registration form.
 
 ```
-    // Get your sales of the current day
-    $sales = getAllSalesOfTheCurrentDay() 
-    
-    for each ($order in $sales)
-    {
-        // Now it's the same as in the previous example.
-        
-        $email = 'replace-it-with-your-customer-email@domain.com'; 
-            
-        $uId = WoowUpAPI::getUIdByMail($email);
-    
-        if (!empty($uId)){
-            $salePoints = WoowUpAPI::getContestSalePoints($contestId, $apiKey);
-            if( !$salePoints ) return;
-    
-            // In the following example, replace the values for the actual data from your Purchase Order;
-            $total = 50;
-            $orderNumber=5;
-            $orderDetail = array();
-    
-            // You may add multiple items to the order detail.
-            $orderDetail[] = array(
-                    'sku' => 'SK02313',
-                    'productName' => 'Vanilla cake',
-                    'Quantity' => 1,
-                    'Price' => 16
-                );
-    
-            $points = ceil($salePoints * floor($total);
-            WoowUpAPI::commitPointsToWoowup($contestId, $apiKey, $uId, $points, $orderNumber, $orderDetail);
-        }else{
-            //User not found, not currently registered in your loyalty program
+        if( empty($uId ) )
+        {
+            $uId = $WoowUpAPI->initializeCustomer($customerID, 
+                $customerEmail,
+                $customerFirstName,
+                $customerLastname;
+            if( !$uId )
+            {
+                error_log("{error creating user: ".$customerID ."}");
+            }
         }
-    }
-´´´
+```
+
+Or you may prefer that only registered customers in your Loyalty Program may be able to earn points, as in airlines programs where you only earn points if you have registered.
+
+4) Get the info of the order and calculate how many points your customer earned. This is just an example but look at the format you will need to use for the order detail.
+
+```
+        $orderNumber='1034242';
+        $orderTotal=300;
+        $orderDetail[] = array(
+            'codigo' => 'SKU1034-212',
+            'producto' => 'LA LAKERS BLUE T-SHIRT',
+            'cantidad' => 3,
+            'precio' => 300
+```
+NOTE: The order detail is optional. But if you include it then you will be able to take adavantage of the filters in the Database tab to create filters and segments as well as see all the customer behaviour in his profile.
+
+5) Get how many points you will give for each $:
+
+```
+        $salePoints = $WoowUpAPI->getSalePoints();
+```
+
+6) Finally reward the customer:
+```
+    $WoowUpAPI->rewardCustomerWithPoints($uId, $orderTotal * $salePoints, $orderNumber, $orderDetail);
+```
