@@ -40,6 +40,8 @@ Se ejecuta antes de calcular los puntos a acreditar en una orden.
 Tiene la potestad de modificar los puntos totales de la orden.
 En caso que la función modifique los puntos en el objeto varien pasado
 como parámetro, se enviará dicha cantidad precalculada a la plataforma woowup.
+
+El método setPoint sobre el objeto varien establece los puntos a acreditar para la orden.
   
 Ejemplo de uso:
 
