@@ -97,6 +97,7 @@ Suma puntos a un usuario buscandolo por su DNI registrado en la aplicación, esp
 | points | Si | Puntos a sumar |
 | nrofactura | Si | Nro de la factura |
 | factura | No | Detalles de la factura en formato json |
+| fecha | No | Fecha de acreditación (Formato dd/mm/yyyy) |
 | branch     | No          | Nombre de la sucursal donde se efectuó la transacción (Debe estar previamente cargada en el sistema) |
 
 El formato del detalle de la factura deber ser:
