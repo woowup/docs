@@ -1,4 +1,4 @@
-Beneficios
+Coupons
 ======
 
 
@@ -7,13 +7,13 @@ Endpoints
 
 ### POST /coupon_status
 
-Cambia el estado de un cupón
+Change a redeemed cupon status
 
 
-| Parameter      | Mandatory | Explanation                                                                                      |
+| Parameter      | Required | Details   |
+| coupon_id | Yes | Coupon ID |
 | ------ | ------ | ------ |
-| coupon_id | Si | Id de un cupón |
-| status | Si | 4 : Estado Canjeado |
+| status | Yes | 0: Available, 1:Assigned, 3:Cancelled|
 
 
 #### POST /coupon_status
