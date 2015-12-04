@@ -54,8 +54,8 @@ curl -H 'Username: .....' \
 
 ##API resources: 
 
-* [Complete API](https://github.com/woowup/docs/blob/master/api/API.md)
-* [WebHooks](https://github.com/woowup/docs/blob/master/api/WebHooks.md)
+* [Complete API](https://github.com/woowup/docs/blob/master/api/api.md)
+* [WebHooks](https://github.com/woowup/docs/blob/master/api/webhooks.md)
 
 ##Magento Connect
 
