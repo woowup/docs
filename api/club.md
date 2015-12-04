@@ -1,4 +1,4 @@
-Sales
+Transactions
 ====================
 
 Endpoints
