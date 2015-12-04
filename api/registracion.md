@@ -1,4 +1,4 @@
-Registración
+Registration
 ======
 
 
@@ -7,15 +7,15 @@ Endpoints
 
 ### POST /register_user_classic
 
-Retorna los datos del usuario registrado.
+Returns new registered user data.
 
-| Parámetro      | Obligatorio | Explicación                                                                                      |
+| Parameter      | Required | Details                                                                                      |
 | ------ | ------ | ------ |
-| uid | Si | ID del usuario |
-| pass | Si | Pin del usuario |
-| email | Si | Email |
-| first_name | Si | Nombre |
-| last_name | Si | Apellido |
+| uid | Yes | User ID. By default is email but you can choose other (internal ID, phone, CPF / DNI / RUT / SSN) |
+| pass | Yes | User password to login into the program |
+| email | Yes | Email |
+| first_name | Yes | Name |
+| last_name | Yes | Last Name |
 
 
 #### POST /register_user_classic
@@ -31,10 +31,10 @@ Retorna los datos del usuario registrado.
       "status":1,
       "service_uid":"31824477",
       "service_pass":"81dc9bdb52d04dc20036dbd8313ed055",
-      "email":"juan.villca@acctoujours.com",
-      "first_name":"Juan",
-      "last_name":"Villca",
-      "name":"Juan Villca",
+      "email":"jhon.doe@hotmil.com",
+      "first_name":"John",
+      "last_name":"Doe",
+      "name":"Juan Doe",
       "createtime":"2014-08-24 11:33:12",
       "id":"9",
       "locale":null,
