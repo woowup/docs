@@ -1,4 +1,4 @@
-Club
+Sales
 ====================
 
 Endpoints
@@ -6,10 +6,7 @@ Endpoints
 
 ### GET /contest_sale_points
 
-Obtiene la cantidad de puntos otorgados por dinero en ventas por un club.
-
-No requiere parametros adicionales.
-
+Get how many points related to sales where given in your Loyalty Program.
 
 #### GET /contest_sale_points
 
