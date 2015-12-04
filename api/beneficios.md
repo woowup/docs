@@ -7,13 +7,12 @@ Endpoints
 
 ### POST /coupon_status
 
-Change a redeemed cupon status
+Change the status to an existin cupon:
 
-
-| Parameter      | Required | Details   |
+| Parameter      | Required | Details | 
 | coupon_id | Yes | Coupon ID |
 | ------ | ------ | ------ |
-| status | Yes | 0: Available, 1:Assigned, 3:Cancelled|
+| status | Yes | 0: Available, 1:Assigned, 3:Cancelled |
 
 
 #### POST /coupon_status
