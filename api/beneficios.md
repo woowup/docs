@@ -9,9 +9,9 @@ Endpoints
 
 Change the status to an existin cupon:
 
-| Parameter      | Required | Details | 
-| coupon_id | Yes | Coupon ID |
+| Parameter      | Required  | Details   | 
 | ------ | ------ | ------ |
+| coupon_id | Yes | Coupon ID |
 | status | Yes | 0: Available, 1:Assigned, 3:Cancelled |
 
 
