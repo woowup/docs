@@ -52,14 +52,10 @@ curl -H 'Username: .....' \
 * [Get user's transactions](https://github.com/woowup/docs/blob/master/api/get-users-transactions)
 * [Mark coupon as changed](https://github.com/woowup/docs/blob/master/api/get-users-transactions)
 
-##API resources
+##API resources: 
 
-* [Users](https://github.com/woowup/docs/blob/master/api/registracion.md)
-* [Benefits and coupons](https://github.com/woowup/docs/blob/master/api/beneficios.md)
-* [Contents](https://github.com/woowup/docs/blob/master/api/contenidos.md)
-* [Points](https://github.com/woowup/docs/blob/master/api/puntos.md)
-* [Club](https://github.com/woowup/docs/blob/master/api/club.md)
-* [Webhooks](https://github.com/woowup/docs/blob/master/api/webhooks.md)
+* [Complete API](https://github.com/woowup/docs/blob/master/api/API.md)
+* [WebHooks](https://github.com/woowup/docs/blob/master/api/WebHooks.md)
 
 ##Magento Connect
 
