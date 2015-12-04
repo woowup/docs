@@ -7,12 +7,13 @@ Endpoints
 
 ### POST /coupon_status
 
-Change the status to an existin cupon:
+WoowUp coupon tracking ends when the coupon is delivered to the user. 
+You can use this endpoint to extend the tracking and tell WoowUp that a coupon was actually used by the user. 
 
 | Parameter      | Required  | Details   | 
 | ------ | ------ | ------ |
 | coupon_id | Yes | Coupon ID |
-| status | Yes | 0: Available, 1:Assigned, 3:Cancelled |
+| status | Yes | 4: Used |
 
 
 #### POST /coupon_status
