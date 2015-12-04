@@ -43,6 +43,6 @@ In case of a *False* response, you should specify the following as well:
 
 {
   "status": false,
-  "message": "Your CPF wasn't found in our customers database"
+  "message": "Your CPF wasn't found in our customers database. Please contact our call center to assist you."
 }
 ```
