@@ -1,13 +1,13 @@
 Webhooks
 ====================
 
-##Validar Registro de Usuario 
+##Authorize a new user registration 
 
-La URL a utilizar debe ingresarse en la sección de __Conecta__ dentro del administrador
+You must specifiy a webservice URL in the section __Conecta__ of WoowUp administration module
 
 
 ###Request
-Al registrarse un usuario, se disparará una llamada a esa url con la siguiente información:
+When a new user registers, a call is dispatched to your webservice
 
 ```php
 array(	'method'  => 'POST',
@@ -16,24 +16,24 @@ array(	'method'  => 'POST',
     )
 ```
 
-Donde *$data* es un JSON con cada campo del CustomForm y su respuesta
+Where *$data* is a JSON structure with every field of the registration form and the user's ansewer.
 
 ```json
 {
   "email": "johndoe@gmail.com",
-  "dni": "24586932",
+  "CPF": "24586932",
   ... 
 }
 ```
 
 ###Response
-Como respuesta, debe retornar un JSON con los siguientes valores:
+As a response, you will receive a JSON with this data:
 
-* __Status__ : [Boolean] *True* sí el usuario debe ser registrado, *False* si no.
+* __Status__ : [Boolean] *True* if the user is allowed to be registered, *False* if the user should not be allowed to register.
 
-En caso de que sea *False*, deben enviarse también los siguientes parámetros:
+In case of a *False* response, you should specify the following as well:
 
-* __Message__ : [String] Mensaje de error a mostrarle al usuario.
+* __Message__ : [String] Message to show the user the reason of the denial.
 
 
 ```json
@@ -43,6 +43,6 @@ En caso de que sea *False*, deben enviarse también los siguientes parámetros:
 
 {
   "status": false,
-  "message": "Tu DNI no se encuentra registrado"
+  "message": "Your CPF wasn't found in our customers database"
 }
 ```
