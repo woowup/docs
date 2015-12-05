@@ -93,110 +93,11 @@ Get how many points related to sales where given in your Loyalty Program.
 }
 ```
 
-Contenidos
-======
-
-
-Endpoints
----------
-
-### GET /content
-
-Consulta un contenido en particular
-
-
-| Parameter      | Mandatory | Explanation                                                                                      |
-| ------ | ------ | ------ |
-| content_id | Si | Id de un contenido |
-| with_actions | No | Valores posibles: 1 ó 0. Por defecto su valor es 1 En caso de valer 1, el contenido es devuelto junto con sus acciones correspondientes, caso contrario solo se devuelve la información del contenido. |
-| userpoints | No | Solo necesario cuando el Servicio MercadoPago está activo. Calcula dinámicamente los points y price necesarios para el canje de un beneficio según los puntos de un usuario. |
-
-
-#### GET /content
-
-`HTTP/1.1 200 OK`
-
-```json
-{
-  "id":"14",
-  "title":"Imagen 1",
-  "description":"Descripci\u00f3n",
-  "status":"closed",
-  "image":"https:\/\/cdn.woowup.com\/uploads\/20131107\/55EA97C5-139A-6B87-E04E-BCA57FC14BD0.t.jpg",
-  "type":"1",
-  "category_id":null,
-  "created":"2013-11-07 11:39:41",
-  "actions":{
-    "share":{
-      "id":"22",
-      "points":"500",
-      "done":"1",
-      "status":"active",
-      "created":"2013-11-07 11:39:41",
-      "url":"http:\/\/www.facebook.com"
-    },
-    "want":{
-      "id":"23",
-      "points":"200",
-      "done":"2",
-      "status":"active",
-      "created":"2013-11-07 11:39:41"
-    },
-    "buy":{
-      "id":"24",
-      "points":"0",
-      "done":"3",
-      "status":"active",
-      "created":"2013-11-07 11:39:42",
-      "url":"http:\/\/www.yahoo.com"
-    },
-    "view":{
-      "id":"25",
-      "points":"0",
-      "done":"2",
-      "status":"active",
-      "created":"2013-11-07 11:39:42",
-      "url":"http:\/\/www.google.com"
-    }
-  }
-}
-```
-
 
 ### GET /connectedservices
 
-Consulta los servicios configurados, en caso de estarlos se retorna la configuración cargada (MP, TiendaNube, ...)
+Get the connected services for this Programm (Magento, TiendaNube, Hubspot, etc).
 
-
-
-#### GET /connectedservices
-
-`HTTP/1.1 200 OK`
-
-```json
-...
-{
-  "mp":{
-    "status":true,
-    "data":{
-      "id":"1",
-      "app_id":"13",
-      "app_code":"CONTEST",
-      "mp_enabled":"1",
-      "mp_clientid":"....",
-      "mp_clientsecret":"....",
-      "mp_percentage":"5",
-      "created":"2013-12-27 14:26:38",
-      "vt_enabled":"1",
-      "vt_name":"complot",
-      "vt_appkey":"....",
-      "vt_apptoken":"...",
-      "vt_lastprocessedtime":null
-    }
-  }
-}
-...
-```
 
 Points
 ======
@@ -369,14 +270,14 @@ Returns new registered user data.
 
 ### POST /initialize_user
 
-Inicializa un usuario en Woowup, quedando su registración pendiente. El usuario ya acumulará puntos, pero deberá registrarse previamente
+Add a new user to the Programm, with its registration pending. The user can earn points but he yet need to register to view his points and redeem a coupon.
 
-| Parámetro      | Obligatorio | Explicación                                                                                      |
+| Parameter      | Required | Detail                                                                                      |
 | ------ | ------ | ------ |
-| uid | Si | ID del usuario |
-| email | Si | Email |
-| first_name | Si | Nombre |
-| last_name | Si | Apellido |
+| uid | Yes | User ID. Default is email |
+| email | Yes | Email |
+| first_name | Yes | Name |
+| last_name | Yes | Last name |
 
 
 #### POST /initialize_user
@@ -428,7 +329,7 @@ Inicializa un usuario en Woowup, quedando su registración pendiente. El usuario
 ```
 
 
-Usuarios
+Users
 ======
 
 
@@ -437,12 +338,12 @@ Endpoints
 
 ### GET /user_by_email
 
-Retorna la información de un usuario buscando por email
+Get user information searching by his email.
 
 
-| Parámetro      | Obligatorio | Explicación                                                                                      |
+| Paramter      | Required | Detail |
 | ------ | ------ | ------ |
-| email | Si | Email |
+| email | Yes | Email |
 
 
 #### GET /user_by_email
@@ -455,10 +356,10 @@ Retorna la información de un usuario buscando por email
   "data":{
     "user":{
       "points":"4256",
-      "name":"Juan Villca",
-      "first_name":"Juan",
-      "last_name":"Villca",
-      "email":"juan.villca@devellabs.com",
+      "name":"John Doe",
+      "first_name":"John",
+      "last_name":"Doe",
+      "email":"john.doe@hotmail.com",
       "locale":"en_GB",
       "timezone":"-3",
       "createtime":"2013-10-22 20:15:17",
