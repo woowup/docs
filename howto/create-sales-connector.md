@@ -53,7 +53,7 @@ $orderDetail[] = array(
     'codigo' => 'SKU1034-212',
     'producto' => 'LA LAKERS BLUE T-SHIRT',
     'cantidad' => 3,
-    'precio' => 300
+    'precio' => 300 // This is the total price for this item, not the unit price. 
 ```
 NOTE: The order detail is optional. But if you include it then you will be able to take adavantage of the filters in the Database tab to create filters and segments as well as see all the customer behaviour in his profile.
 
