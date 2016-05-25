@@ -10,13 +10,6 @@ Follow these steps:
 
 ![Instalacion](https://github.com/woowup/docs/raw/master/magento_connect/images/01-Instalación.png)
 
-
-- To get access to WoowUp API from your app, you need an API Key. You will find it in the administrator console, inside the Connect tab. Or you can write us to <mailto:api@woowup.com> for help.
-- Go to Magento's backend, then to  System -> Configuration -> WOOWUP -> Configuration.
-![Configuracion](https://github.com/silvioq/docs/raw/master/magento_connect/images/02-configuracion.png)
-
-- Save all the changes.
-
 Configuring the SOAP user
 Go back to Magento's admin and select System->Web Services->Soap/XML-RPC Roles 
 <img src="images/Magento-Soap-Config.png" width=300></img>
@@ -45,6 +38,14 @@ Choose a password, and load it in the New API Key field and again in the API Key
 
 Now click in User Role. Assign the Coupon generator role and click on Save user.
 <img src="images/Magento-Role-Coupon.png" width=400></img>
+
+- To get access to WoowUp API from your app, you need an API Key. You will find it in the administrator console, inside the Connect tab. Or you can write us to <mailto:api@woowup.com> for help.
+- Go to Magento's backend, then to  System -> Configuration -> WOOWUP -> Configuration.
+![Configuracion](https://github.com/silvioq/docs/raw/master/magento_connect/images/02-configuracion.png)
+
+- Save all the changes.
+
+
 Configuring the widget
 ------------------------
 - Optionally you may want to configure the "Earn points" widget. To do this, go to the menu "CMS/Widgets" and create a new widget of the type "Woowup Points".
