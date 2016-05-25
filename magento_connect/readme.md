@@ -56,8 +56,15 @@ You can choose in which purchase order event the customer will receive its point
 Create user if not exists: Chooes yes to auto-register new customers with its first purchase. If you choose NO, you are forcing customer to first enroll in your Loyalty Program before they can earn points.
 <br>
 Save all the changes. <br>
-<img src="images/Magento-Save-Config.png" width="450"></img>
+<img src="images/Magento-Save-Config.png" width="150"></img>
 
+Finally, take note of:
+1. Your magento store URL.
+2. Soap user and password
+
+You will need to complete this information in WoowUp backoffice (Connect Tab):
+
+<img src="images/Magento-connect.png" width="450"></img>
 
 Configuring the widget
 ------------------------
