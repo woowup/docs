@@ -39,7 +39,6 @@ Go back to Magento's admin and select System->Web Services->Soap/XML-RPC Roles
 Choose a password and type it in the New API Key field and again in the API Key Confirmation field. Then click Save User. <br>
 <img src="images/Magento-Woowupuser.png"></img>
 
-
 11) Now click in User Role. Assign the Coupon generator role and click on Save user.<br>
 <img src="images/Magento-Role-Coupon.png"></img>
 
@@ -64,7 +63,7 @@ Finally, take note of:
 
 You will need to complete this information in WoowUp backoffice (Connect Tab):
 
-<img src="images/Magento-connect.png" width="450"></img>
+<img src="images/Magento-Connect.png" width="450"></img>
 
 Configuring the widget
 ------------------------
