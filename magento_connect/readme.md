@@ -19,7 +19,7 @@ Follow these steps:
 
 Configuring the SOAP user
 Go back to Magento's admin and select System->Web Services->Soap/XML-RPC Roles 
-![Configuracion](https://github.com/silvioq/docs/raw/master/magento_connect/images/Magento-Soap-Config.png)
+![Configuracion2](https://github.com/silvioq/docs/raw/master/magento_connect/images/Magento-Soap-Config.png)
 
 Click on Add new Role
 Go now to Role Resources tab.
