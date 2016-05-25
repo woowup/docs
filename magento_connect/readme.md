@@ -26,19 +26,20 @@ Click on Add new Role
 <img src="images/Magento-add-new-role.png" width=200></img>
 
 Go now to Role Resources tab.
+<br>
 <img src="images/Magento-Role-Resources.png" width=200></img>
 
 Go down until you find WoowUp API. Select it and click again in Save Role (up in the right).
 <img src="images/Magento-WoowUp-API.png" width=350></img>
 
-From the System menu, select Web Services->SOAP/XML-RPC Users.
+From the System menu, select Web Services->SOAP/XML-RPC Users.<br>
 <img src="images/Magento-SOAP-XML.png" width=200></img>
 
-Click in Add New User to create a new user.
+Click in Add New User to create a new user.<br>
 <img src="images/Magento-New-User.png" width=200></img>
 
 Create a new user with name Woowupuser.
-Choose a password, and load it in the New API Key field and again in the API Key Confirmation field. Then click Save User.
+Choose a password, and load it in the New API Key field and again in the API Key Confirmation field. Then click Save User. <br>
 <img src="images/Magento-Woowupuser.png" width=400></img>
 
 
