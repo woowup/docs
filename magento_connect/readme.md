@@ -5,12 +5,12 @@ Setup
 ----------------
 Follow these steps:
 
-1. [Download this zip file](https://github.com/woowup/docs/raw/master/magento_connect/Woowup_Connect-0.3.0.tgz)
-2. Install the connector through Magento Connect
+1) [Download this zip file](https://github.com/woowup/docs/raw/master/magento_connect/Woowup_Connect-0.3.0.tgz)
+2) Install the connector through Magento Connect
 
 ![Instalacion](https://github.com/woowup/docs/raw/master/magento_connect/images/01-Instalación.png)
 
-3. Configuring the SOAP user
+3) Configuring the SOAP user
 Go back to Magento's admin and select System->Web Services->Soap/XML-RPC Roles 
 <img src="images/Magento-Soap-Config.png" width=300></img>
 
