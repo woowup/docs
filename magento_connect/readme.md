@@ -45,11 +45,18 @@ Choose a password and type it in the New API Key field and again in the API Key 
 
 12) Go to Magento's backend, then to  System -> Configuration -> WOOWUP -> Configuration. <br>
 
-- To get access to WoowUp API from your app, you need an API Key. You will find it in the administrator console, inside the Connect tab. Or you can write us to <mailto:api@woowup.com> for help.
+- To get access to WoowUp API from your app, you need the API Key and Contest ID. You will find it in the administrator console, inside the Connect tab. Or you can write us to <mailto:api@woowup.com> for help.
 
-![Configuracion](https://github.com/silvioq/docs/raw/master/magento_connect/images/02-configuracion.png)
+<img src="images/Magento-API-Config.png"></img>
 
-Save all the changes.
+You can choose in which purchase order event the customer will receive its points:
+
+<img src="images/Magento-Sum-Points.png" width="450"></img>
+
+Create user if not exists: Chooes yes to auto-register new customers with its first purchase. If you choose NO, you are forcing customer to first enroll in your Loyalty Program before they can earn points.
+<br>
+Save all the changes. <br>
+<img src="images/Magento-Save-Config.png" width="450"></img>
 
 
 Configuring the widget
