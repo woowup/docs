@@ -59,7 +59,7 @@ curl -H 'Username: .....' \
 
 ##Magento Connect
 
-You can add points points directly from your Magento E-Commerce. For further information, check [here](https://github.com/woowup/docs/blob/master/README.md).
+You can add points points directly from your Magento E-Commerce. For further information, check [here](https://github.com/woowup/docs/blob/master/magento_connect/readme.md).
 
 ##Contact
 
