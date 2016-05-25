@@ -5,49 +5,51 @@ Setup
 ----------------
 Follow these steps:
 
-- [Download this zip file](https://github.com/woowup/docs/raw/master/magento_connect/Woowup_Connect-0.3.0.tgz)
-- Install the connector through Magento Connect
+1. [Download this zip file](https://github.com/woowup/docs/raw/master/magento_connect/Woowup_Connect-0.3.0.tgz)
+2. Install the connector through Magento Connect
 
 ![Instalacion](https://github.com/woowup/docs/raw/master/magento_connect/images/01-Instalación.png)
 
-Configuring the SOAP user
+3. Configuring the SOAP user
 Go back to Magento's admin and select System->Web Services->Soap/XML-RPC Roles 
 <img src="images/Magento-Soap-Config.png" width=300></img>
 
-Click on Add new Role
+4. Click on Add new Role
 
 <img src="images/Magento-add-new-role.png" width=200></img>
 
-Go to Role Info tab and create a new role with name "Coupon generator". Click Save Role. <br>
+5. Go to Role Info tab and create a new role with name "Coupon generator". Click Save Role. <br>
 
-<img src="images/Magento-Role-Info.png" width=350></img>
+<img src="images/Magento-Role-Info.png" ></img>
 
-Go now to Role Resources tab.
+6. Go now to Role Resources tab.
 <br>
 <img src="images/Magento-Role-Resources.png" width=200></img>
 
-Go down until you find WoowUp API. Select it and click again in Save Role (up in the right).
+7. Go down until you find WoowUp API. Select it and click again in Save Role (up in the right).
 <img src="images/Magento-WoowUp-API.png" width=350></img>
 
-From the System menu, select Web Services->SOAP/XML-RPC Users.<br>
+8. From the System menu, select Web Services->SOAP/XML-RPC Users.<br>
 <img src="images/Magento-SOAP-XML.png" width=200></img>
 
-Click in Add New User to create a new user.<br>
+9. Click in Add New User to create a new user.<br>
 <img src="images/Magento-New-User.png" width=200></img>
 
-Create a new user with name Woowupuser.
-Choose a password, and load it in the New API Key field and again in the API Key Confirmation field. Then click Save User. <br>
-<img src="images/Magento-Woowupuser.png" width=400></img>
+10. Create a new user with name Woowupuser.
+Choose a password and type it in the New API Key field and again in the API Key Confirmation field. Then click Save User. <br>
+<img src="images/Magento-Woowupuser.png"></img>
 
 
-Now click in User Role. Assign the Coupon generator role and click on Save user.
-<img src="images/Magento-Role-Coupon.png" width=400></img>
+11. Now click in User Role. Assign the Coupon generator role and click on Save user.
+<img src="images/Magento-Role-Coupon.png"></img>
+
+12. Go to Magento's backend, then to  System -> Configuration -> WOOWUP -> Configuration.
 
 - To get access to WoowUp API from your app, you need an API Key. You will find it in the administrator console, inside the Connect tab. Or you can write us to <mailto:api@woowup.com> for help.
-- Go to Magento's backend, then to  System -> Configuration -> WOOWUP -> Configuration.
+
 ![Configuracion](https://github.com/silvioq/docs/raw/master/magento_connect/images/02-configuracion.png)
 
-- Save all the changes.
+Save all the changes.
 
 
 Configuring the widget
