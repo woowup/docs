@@ -18,6 +18,10 @@ Click on Add new Role
 
 <img src="images/Magento-add-new-role.png" width=200></img>
 
+Go to Role Info tab and create a new role with name "Coupon generator". Click Save Role. <br>
+
+<img src="images/Magento-Role-Info.png" width=350></img>
+
 Go now to Role Resources tab.
 <br>
 <img src="images/Magento-Role-Resources.png" width=200></img>
