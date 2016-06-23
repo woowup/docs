@@ -152,13 +152,26 @@ Register a Purchase Order and reward the user with points. Returns transaction I
 
 The detail in json format should be like this:
 ```json
-[{"codigo":"12", "producto":"prod1", "cantidad":2, "precio": 10.3},{...}]
+[
+  {
+    "codigo":"12",
+    "producto":"prod1",
+    "cantidad":2,
+    "precio": 10.3,
+    "branch": "branch 1",
+    "variations": [
+      {"name": "Color", "value": "Rojo"},
+      {"name": "Talle", "value": "XS"}
+    ]
+  },
+  {...}
+]
 ```
 Where codigo is product code, producto is product name, cantidad is quantity purchased and precio is unit price.
 
 Example:
-```json
-curl -H 'Username: xx' -H 'Apikey: xxxx' -H 'Accept: application/json' -d 'dni=33333333&points=100&nrofactura=1234&factura=[{"codigo":"12", "producto":"prod1", "cantidad":2, "precio": 10.3},{"codigo":"13", "producto":"prod3", "cantidad":1, "precio": 1.3}]'  https://www.woowup.com/apiv2/13/add_sale_points_by_dni
+```shell
+curl -H 'Username: xx' -H 'Apikey: xxxx' -H 'Accept: application/json' -d 'uid=john@doe.com&points=100&nrofactura=1234&factura=[{"codigo":"12", "producto":"prod1", "cantidad":2, "precio": 10.3, "variations": [{"name": "Color", "value": "Red"}]},{"codigo":"13", "producto":"prod3", "cantidad":1, "precio": 1.3, "variations": [{"name": "Color", "value": "Green"}]}]'  "https://www.woowup.com/apiv2/13/add_sale_points_by_uid"
 ```
 
 #### POST /add_sale_points_by_uid
@@ -184,7 +197,7 @@ Cancel a Purchase order and reverting the related points previously given to the
 | nrofactura | Yes | Purchase order number |
 
 Example:
-```json
+```shell
 curl -H 'Username: xx' -H 'Apikey: xxxx' -H 'Accept: application/json' -d 'nrofactura=1234'  https://www.woowup.com/apiv2/13/cancel_invoice
 ```
 
@@ -447,6 +460,34 @@ Retorna la información de un usuario buscando por email
   "message":"User already exists"
 }
 ```
+
+Send transactional emails
+=========================
+
+### POST /send_transactional_email
+
+Send an email to one or more emails. The email data must be sent in the body of the request in json format.
+
+```json
+{
+  "to":["user1@email.com", "user2@email.com", "user3@email.com", ...],
+  "subject": "email subject",
+  "body": "email body"
+}
+```
+
+#### POST /send_transactional_email
+
+`HTTP/1.1 200 OK`
+
+```shell
+curl -X POST -H "Content-Type: application/json" -H "Username: {APP_ID}" -H "Apikey: {API_KEY}" -H "Accept: application/json" -H "Cache-Control: no-cache" -d '{
+    "to": ["user1@email.com", "user2@email.com"],
+    "subject": "email subject",
+    "body": "body subject"
+}' "https://admin.woowup.com/apiv2/XXX/send_transactional_email"
+```
+
 
 Webhooks
 ====================
