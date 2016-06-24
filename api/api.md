@@ -461,6 +461,94 @@ Retorna la información de un usuario buscando por email
 }
 ```
 
+Products and Categories
+=========================
+
+### POST /save_product
+
+Create or update (if the code already exists) a product in WoowUp
+
+#### Uri Parameters
+| Parameter     | Required  | Description       |
+| ------------- | --------- | ----------------- |
+| code          | Yes       | Id of the product |
+| name          | Yes       | Name of the product |
+| category_id   | No        | Id of the category |
+| thumbnail_url | No        | Product's thumbnail url |
+| image_url     | No        | Product's image url |
+| url           | No        | Product's full url in the e-commerce |
+| cost          | No        | Production's cost of the product |
+
+#### Request Example
+
+```shell
+curl -X POST -H "Content-Type: application/json" -H "Username: {APP_ID}" -H "Apikey: {API_KEY}" -H "Accept: application/json" -H "Cache-Control: no-cache" \
+"https://admin.woowup.com/apiv2/XXX/save_product?code=123&name=soap&category_id=23&thumbnail_url=http://img.com/thumbnail.jpg&image_url=http://img.com/thumbnail.jpg&url=http://my-ecommerce.com/123/soap&cost=15.8"
+```
+
+#### Response
+
+`HTTP/1.1 200 OK`
+
+```json
+{"status": true, "message": "product updated"}
+```
+
+### POST /save_category_tree
+
+Update category tree, if one or more categories doesn't exists will be created.
+
+#### Uri Parameters
+
+Don't have parameters
+
+#### Post Body
+
+This is an example of the json format of the categories
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Ropa Mujer",
+    "children": [
+      {
+        "id": 2,
+        "name": "Polleras",
+        "children": [...]
+      },
+      {
+        "id": 3,
+        "name": "Minifaldas",
+        "children": null
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Ropa Hombre",
+    "children": [...]
+  },
+  ...
+]
+```
+#### Request Example
+
+```shell
+curl -X POST -H "Content-Type: application/json" -H "Username: {APP_ID}" -H "Apikey: {API_KEY}" -H "Accept: application/json" -H "Cache-Control: no-cache" \
+-d "[{"id": 1, "name": "RopaMujer", "children": [{"id": 2, "name": "Polleras", "children": null}, {"id": 3, "name": "Minifaldas", "children": null}]}, {"id": 4, "name": "RopaHombre", "children": null}]" \
+"https://admin.woowup.com/apiv2/{APP_ID}/save_category_tree"
+```
+
+#### Response
+
+`HTTP/1.1 200 OK`
+
+```json
+{"status": true}
+```
+
+
 Send transactional emails
 =========================
 
@@ -484,7 +572,7 @@ Send an email to one or more emails. The email data must be sent in the body of 
 curl -X POST -H "Content-Type: application/json" -H "Username: {APP_ID}" -H "Apikey: {API_KEY}" -H "Accept: application/json" -H "Cache-Control: no-cache" -d '{
     "to": ["user1@email.com", "user2@email.com"],
     "subject": "email subject",
-    "body": "body subject"
+    "body": "email body"
 }' "https://admin.woowup.com/apiv2/XXX/send_transactional_email"
 ```
 
