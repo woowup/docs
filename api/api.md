@@ -7,10 +7,10 @@ Endpoints
 
 ### POST /coupon_status
 
-WoowUp coupon tracking ends when the coupon is delivered to the user. 
-You can use this endpoint to extend the tracking and tell WoowUp that a coupon was actually used by the user. 
+WoowUp coupon tracking ends when the coupon is delivered to the user.
+You can use this endpoint to extend the tracking and tell WoowUp that a coupon was actually used by the user.
 
-| Parameter      | Required  | Details   | 
+| Parameter      | Required  | Details   |
 | ------ | ------ | ------ |
 | coupon_id | Yes | Coupon ID |
 | status | Yes | 4: Used |
@@ -461,6 +461,72 @@ Retorna la información de un usuario buscando por email
 }
 ```
 
+### GET /top_users_by_points
+
+Returns a list of users ordered by points
+
+
+| Parameter      | Required | Description |
+| ------ | ------ | ------ |
+| limit | No | Amount of users returned. Default = 10, max 100 |
+
+
+#### GET /top_users_by_points
+
+`HTTP/1.1 200 OK`
+
+```json
+[
+  {
+    "id": "1234",
+    "name": "John Doe",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john@doe.com",
+    "locale": "es_LA",
+    "timezone": "-3",
+    "createtime": "2015-03-06 18:38:26",
+    "fid": "000000000",
+    "service": "1",
+    "service_uid": "john@doe.com",
+    "service_pass": "XXXXXXX",
+    "status": "1",
+    "useremail": null,
+    "gender": "0",
+    "birthday": "1943-06-11",
+    "hometown": null,
+    "location": null,
+    "country_id": null,
+    "tags": null,
+    "points": 999
+  },
+  {
+    "id": "1235",
+    "name": "Joane Doe",
+    "first_name": "Joane",
+    "last_name": "Doe",
+    "email": "joane@doe.com",
+    "locale": "es_LA",
+    "timezone": "-3",
+    "createtime": "2015-09-04 11:23:54",
+    "fid": "00000000",
+    "service": "1",
+    "service_uid": "joane@doe.com",
+    "service_pass": "XXXXXXX",
+    "status": "1",
+    "useremail": null,
+    "gender": "0",
+    "birthday": "1987-04-26",
+    "hometown": null,
+    "location": null,
+    "country_id": null,
+    "tags": null,
+    "points": 998
+  },
+  ...
+]
+```
+
 Products and Categories
 =========================
 
@@ -477,7 +543,7 @@ Create or update (if the code already exists) a product in WoowUp
 | thumbnail_url | No        | Product's thumbnail url |
 | image_url     | No        | Product's image url |
 | url           | No        | Product's full url in the e-commerce |
-| cost          | No        | Production's cost of the product |
+| cost          | No        | Production's cost of the product (Ex: 125.50) |
 
 #### Request Example
 
@@ -578,14 +644,14 @@ curl -X POST -H "Content-Type: application/json" -H "Username: {APP_ID}" -H "Api
 
 
 Webhooks
-====================
+===============
 
-##Validar Registro de Usuario 
+## Validar Registro de Usuario
 
 La URL a utilizar debe ingresarse en la sección de __Conecta__ dentro del administrador
 
 
-###Request
+### Request
 Al registrarse un usuario, se disparará una llamada a esa url con la siguiente información:
 
 ```php
@@ -601,11 +667,11 @@ Donde *$data* es un JSON con cada campo del CustomForm y su respuesta
 {
   "email": "johndoe@gmail.com",
   "dni": "24586932",
-  ... 
+  ...
 }
 ```
 
-###Response
+### Response
 Como respuesta, debe retornar un JSON con los siguientes valores:
 
 * __Status__ : [Boolean] *True* sí el usuario debe ser registrado, *False* si no.
@@ -625,5 +691,3 @@ En caso de que sea *False*, deben enviarse también los siguientes parámetros:
   "message": "Tu DNI no se encuentra registrado"
 }
 ```
-
-
