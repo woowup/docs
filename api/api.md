@@ -149,7 +149,6 @@ Register a Purchase Order and reward the user with points. Returns transaction I
 | nrofactura | Yes | Purchase order number |
 | factura | No | Purchase order detail. Json format |
 | branch     | No          | Null or Name of the branch where this transaction happened (the branch must exists) |
-| variations | No       | Variations such as Color, Size, etc.  |
 
 
 The detail in json format should be like this:
