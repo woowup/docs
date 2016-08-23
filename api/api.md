@@ -149,6 +149,7 @@ Register a Purchase Order and reward the user with points. Returns transaction I
 | nrofactura | Yes | Purchase order number |
 | factura | No | Purchase order detail. Json format |
 | branch     | No          | Null or Name of the branch where this transaction happened (the branch must exists) |
+| datetime   | No   | Purchase's date, format: yyyy-mm-dd hh:mm:ss. By default is the current date |
 
 
 The detail in json format should be like this:
