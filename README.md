@@ -43,6 +43,7 @@ curl -H 'Username: .....' \
 
 ## How To
 * [What you have to do in Magento to integrate with WoowUp Brain?](https://github.com/woowup/docs/blob/master/howto/create-magento-user.md)
+* [What you have to do in VTEX to integrate with WoowUp Brain? (spanish)](https://github.com/woowup/docs/blob/master/howto/create-perfil-acceso-vtex.md)
 * [Connect your e-commerce or sales software with WoowUp](https://github.com/woowup/docs/blob/master/howto/create-sales-connector.md)
 * [How to reward your own actions](https://github.com/woowup/docs/blob/master/howto/reward-own-actions.md)
 * [Register a new user](https://github.com/woowup/docs/blob/master/api/examples.md#register-a-new-user)
