@@ -23,19 +23,43 @@ When you are doing a search, we paginate the results. In all paginated endpoints
 Endpoints
 ---------
 
-# Users
+## Users
 ### GET /users
 ### GET /user/{id}
 ### GET /user
+Return an user by service_uid
+
+| Parameter      | Required  | Description   |
+| ------ | ------ | ------ |
+| service_uid | Yes | User service_uid |
+
+
 ### GET /user/{id}/exist
+
+Test if an user exist by id.
+
 ### GET /user/exist
+
+Test if an user exist by service_uid.
+
+| Parameter      | Required  | Description   |
+| ------ | ------ | ------ |
+| service_uid | Yes | User service_uid |
+
 ### GET /user/{id}/belongsToSegment
+
+Test if an user belongs to a segment.
+
+| Parameter      | Required  | Description   |
+| ------ | ------ | ------ |
+| segment_id | Yes | Segment id |
+
 ### PUT /user/{id}
 ### PUT /user
 ### DELETE /user/{id}
 ### POST /user
 
-# Benefits
+## Benefits
 ### GET /benefits
 ### GET /benefit/{id}
 ### PUT /benefit/{id}
@@ -43,24 +67,24 @@ Endpoints
 ### DELETE /benefit/{id}
 ### POST /benefit
 
-# Transactions
+## Transactions
 ### GET /transactions
 
-# Purchases
+## Purchases
 ### GET /purchases
 ### GET /purchase/{id}
 ### PUT /purchase/{id}
 ### DELETE /purchase/{id}
 ### POST /purchase
 
-# Mailing
+## Mailing
 ### GET /mailings
 ### GET /mailing/{id}
 ### PUT /mailing/{id}
 ### DELETE /mailing/{id}
 ### POST /mailing
 
-# Mailing Folders
+## Mailing Folders
 ### GET /mailingfolders
 ### GET /mailingfolder/{id}
 ### PUT /mailingfolder/{id}
