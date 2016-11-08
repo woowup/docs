@@ -22,6 +22,10 @@ Luego necesitamos acceso para poder descargar el arbol de categorías de la tien
 
 ![](src/perfil_acceso_4.png)
 
+También para poder configurar los Triggers de carrito abandonado necesitamos acceso a **Dynamic Storage**, para esto agregaremos un nuevo permiso y clickearemos en el botón de __Agregar todos los recursos__
+
+![](src/perfil_acceso_4_2.png)
+
 Por último lo que tenemos que hacer es agregar un usuario a este nuevo perfil, el correo eletrónico del usuario se lo proporcionará WoowUp.
 
 ![](src/perfil_acceso_5.png)
