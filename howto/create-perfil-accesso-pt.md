@@ -22,6 +22,10 @@ Em seguida necesitamos acesso para poder baixar o árvora de categorías da loja
 
 ![](src/perfil_acceso_4.png)
 
+Também para poder configurar os Triggers de carrinho abandonado precisa de acesso a **Dynamic Storage**, para isso adicionamos um novo permiso clicando no botão de __Add all resources__
+
+![](src/perfil_acceso_4_2.png)
+
 Finalmente temos que adicionar um usuario para este novo perfil, o email do usuario vai ser indicado pela WoowUp.
 
 ![](src/perfil_acceso_5.png)
