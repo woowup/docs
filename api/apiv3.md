@@ -20,73 +20,139 @@ When you are doing a search, we paginate the results. In all paginated endpoints
 | limit | Items per page returned. Max: 100 | 25 |
 | page | Number of the page. First page is 0 | 0 |
 
+How to encode 'service_uid'
+--------------------------
+When you are trying to  find an user you could identificate this by his id or his service_uid (commonly is the email), when you use the service_uid you must encode this in Base64 en the result encode as url safe, for example if you need to do this in php:
+
+```php
+$service_uid = 'example@email.com';
+$encoded_uid = urlencode(base64_encode($service_uid));
+$url = 'https://admin.woowup.com/apiv3/users/'.$encoded_uid.'/exists';
+```
+
 Endpoints
 ---------
 
 ## Users
 ### GET /users
-### GET /user/{id}
-### GET /user
-Return an user by service_uid
+### GET /users/{id}
+Return an user by id or service_uid
 
-| Parameter      | Required  | Description   |
-| ------ | ------ | ------ |
-| service_uid | Yes | User service_uid |
+| Parameter      | Type | Required  | Description   |
+| ------ | ------ | ------ | ------ |
+| id | uri |  Yes | User ID or encoded service_uid |
 
+#### Response
 
-### GET /user/{id}/exist
+```
+{
+    "payload": {
+        "userapp_id": 2207258,
+        "user_id": 2192714,
+        "app_id": 123,
+        "service_uid": "user_2192714@email.com",
+        "email": "user_2192714@email.com",
+        "first_name": "first name",
+        "last_name": "last name",
+        "points": 50,
+        "customform": {
+            "dni": "123456789"
+        }
+    },
+    "message":"ok",
+    "code":"ok",
+    "time":"100ms"
+}
+```
+
+### GET /users/{id}/exist
 
 Test if an user exist by id.
 
-### GET /user/exist
+| Parameter      | Type | Required  | Description   |
+| ------ | ------ | ------ | ------ |
+| id | uri |  Yes | User ID or encoded service_uid |
 
-Test if an user exist by service_uid.
+#### Response
 
-| Parameter      | Required  | Description   |
-| ------ | ------ | ------ |
-| service_uid | Yes | User service_uid |
+```
+{
+    "payload": {
+        "exist": true
+    },
+    "message":"ok",
+    "code":"ok",
+    "time":"100ms"
+}
+```
 
 ### GET /user/{id}/belongsToSegment
 
 Test if an user belongs to a segment.
 
-| Parameter      | Required  | Description   |
-| ------ | ------ | ------ |
-| segment_id | Yes | Segment id |
+| Parameter      | Type | Required  | Description   |
+| ------ | ------ | ------ | ------ |
+| id | uri |  Yes | User ID or encoded service_uid |
 
-### PUT /user/{id}
-### PUT /user
-### DELETE /user/{id}
-### POST /user
+#### Response
+
+```
+{
+    "payload": {
+        "belongsToSegment": true
+    },
+    "message":"ok",
+    "code":"ok",
+    "time":"100ms"
+}
+```
+
+### PUT /users/{id}
+not implemented yet
+### DELETE /users/{id}
+not implemented yet
+### POST /users/register
+
+Register a new user into WoowUp
+| Parameter      | Type | Required  | Description   |
+| ------ | ------ | ------ | ------ |
+| id | query |  Yes | User ID or encoded service_uid |
+
+### POST /users/newsletter
+Create a user from newsletter and set a 'newsletter' tag
+| Parameter      | Type | Required  | Description   |
+| ------ | ------ | ------ | ------ |
+| service_uid | query |  Yes | service_uid |
+| email | query |  Yes | User's email |
 
 ## Benefits
 ### GET /benefits
-### GET /benefit/{id}
-### PUT /benefit/{id}
-### POST /benefit/{id}/assign
-### DELETE /benefit/{id}
-### POST /benefit
+### GET /benefits/{id}
+### PUT /benefits/{id}
+### POST /benefits/{id}/assign
+### DELETE /benefits/{id}
+### POST /benefits
 
 ## Transactions
 ### GET /transactions
 
 ## Purchases
 ### GET /purchases
-### GET /purchase/{id}
-### PUT /purchase/{id}
-### DELETE /purchase/{id}
-### POST /purchase
+### GET /purchases/{id}
+### PUT /purchases/{id}
+### DELETE /purchases/{id}
+### POST /purchases
 
 ## Mailing
 ### GET /mailings
-### GET /mailing/{id}
-### PUT /mailing/{id}
-### DELETE /mailing/{id}
-### POST /mailing
+### GET /mailings/{id}
+### PUT /mailings/{id}
+### DELETE /mailings/{id}
+### POST /mailings
 
 ## Mailing Folders
 ### GET /mailingfolders
-### GET /mailingfolder/{id}
-### PUT /mailingfolder/{id}
-### DELETE /mailingfolder/{id}
-### POST /mailingfolder
+### GET /mailingfolders/{id}
+### PUT /mailingfolders/{id}
+### DELETE /mailingfolders/{id}
+### POST /mailingfolders
