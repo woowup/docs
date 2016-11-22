@@ -114,12 +114,14 @@ not implemented yet
 ### POST /users/register
 
 Register a new user into WoowUp
+
 | Parameter      | Type | Required  | Description   |
 | ------ | ------ | ------ | ------ |
 | id | query |  Yes | User ID or encoded service_uid |
 
 ### POST /users/newsletter
 Create a user from newsletter and set a 'newsletter' tag
+
 | Parameter      | Type | Required  | Description   |
 | ------ | ------ | ------ | ------ |
 | service_uid | query |  Yes | service_uid |
