@@ -127,6 +127,30 @@ Create a user from newsletter and set a 'newsletter' tag
 | service_uid | query |  Yes | service_uid |
 | email | query |  Yes | User's email |
 
+### POST /users/{id}/members
+Add family members to an user
+
+| Parameter      | Type | Required  | Description   |
+| ------ | ------ | ------ | ------ |
+| id | uri |  Yes | User ID or encoded service_uid |
+
+#### JSON Request Format
+```json
+[
+    {
+        "relationship": "parent|grandparent|son|friend|sibling",
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john@doe.com",
+        "uid": "john@doe.com",
+        "telephone": "123456789",
+        "gender": "F|M",
+        "birthdate": "YYYY-MM-DD",
+        "address": "Av. Evergreen 123"
+    }
+]
+```
+
 ## Benefits
 ### GET /benefits
 ### GET /benefits/{id}
