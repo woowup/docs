@@ -111,13 +111,44 @@ Test if an user belongs to a segment.
 not implemented yet
 ### DELETE /users/{id}
 not implemented yet
+
 ### POST /users/register
 
-Register a new user into WoowUp
+Returns new registered user data.
 
-| Parameter      | Type | Required  | Description   |
-| ------ | ------ | ------ | ------ |
-| id | query |  Yes | User ID or encoded service_uid |
+| Parameter      | Required | Details                                                                                      |
+| ------ | ------ | ------ |
+| service_uid | Yes | User ID. By default is email but you can choose other (internal ID, phone, CPF / DNI / RUT / SSN) |
+| pass | Yes | User password to login into the program |
+| email | Yes | Email |
+| first_name | Yes | Name |
+| last_name | Yes | Last Name |
+
+
+#### Response
+
+```json
+{
+  "payload":{
+    "userapp_id": 12345,
+    "user_id' 12345,
+    "app_id": 123,
+    "service_uid": "1122334455",
+    "email": "user@example.com",
+    "first_name": "firstname",
+    "last_name": "lastname",
+    "points": 50,
+    "customform": {
+      "cedula": "11223344"
+    }
+  },
+  "message":"ok",
+  "code":"ok",
+  "time":"100ms"
+}
+```
+
+
 
 ### POST /users/newsletter
 Create a user from newsletter and set a 'newsletter' tag
