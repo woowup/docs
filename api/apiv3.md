@@ -169,7 +169,7 @@ Add family members to an user
 ```json
 [
     {
-        "relationship": "parent|grandparent|son|friend|sibling",
+        "relationship": "parent|grandparent|son|friend|sibling|espose",
         "first_name": "John",
         "last_name": "Doe",
         "email": "john@doe.com",
