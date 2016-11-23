@@ -131,7 +131,7 @@ Returns new registered user data.
 {
   "payload":{
     "userapp_id": 12345,
-    "user_id' 12345,
+    "user_id": 12345,
     "app_id": 123,
     "service_uid": "1122334455",
     "email": "user@example.com",
