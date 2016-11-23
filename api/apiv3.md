@@ -182,6 +182,17 @@ Add family members to an user
 ]
 ```
 
+#### Response
+
+```json
+{
+  "payload": {},
+  "message": "ok",
+  "code": "ok",
+  "time": "100ms"
+}
+```
+
 ## Benefits
 ### GET /benefits
 ### GET /benefits/{id}
