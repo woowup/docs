@@ -1,6 +1,7 @@
 WoowUp API V3
 =============
 
+
 Authentication
 --------------
 In any call to the API you must sent the apikey in the query string as a parameter. For example
@@ -12,7 +13,7 @@ So, for example, if your apikey is 'abcdefghijklmnopqrstuvwxyz', you should do a
 
 Other method, and the recomemded, is via Authentication Header, in every call you must send the header
 
-Authentication: Basic abcdefghijklmnopqrstuvwxyz
+`Authorization: Basic abcdefghijklmnopqrstuvwxyz`
 
 Pagination
 ----------
@@ -23,6 +24,12 @@ When you are doing a search, we paginate the results. In all paginated endpoints
 | ------ | ------ | ------ |
 | limit | Items per page returned. Max: 100 | 25 |
 | page | Number of the page. First page is 0 | 0 |
+
+Returned format
+---------------
+
+All endpoints return data in json format, with the `Content-Type: application/json` header. For a correct use you have to send in all the requests the header `Accept: application/json`.
+
 
 How to encode 'service_uid'
 --------------------------
