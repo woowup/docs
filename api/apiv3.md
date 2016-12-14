@@ -39,11 +39,11 @@ Search users by criteria
 
 | Parameter      | Type | Required  | Description   |
 | ------ | ------ | ------ | ------ |
-| limit | uri |  No | Items per page returned. Default 25, max 100 |
-| page | uri |  No | Number of page. First page is 0 |
-| include | uri |  No | Filter's definition in json format. |
-| exclude | uri |  No | Filter's definition in json format. |
-| search | uri |  No | Free text to find in email, first name, last name, uid, etc. |
+| limit | query |  No | Items per page returned. Default 25, max 100 |
+| page | query |  No | Number of page. First page is 0 |
+| include | query |  No | Filter's definition in json format. |
+| exclude | query |  No | Filter's definition in json format. |
+| search | query |  No | Free text to find in email, first name, last name, uid, etc. |
 
 #### Response
 
