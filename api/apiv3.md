@@ -3,12 +3,16 @@ WoowUp API V3
 
 Authentication
 --------------
-In any call to the API you must sent the apikey in the query string as a parameter. For examp
+In any call to the API you must sent the apikey in the query string as a parameter. For example
 
 
 So, for example, if your apikey is 'abcdefghijklmnopqrstuvwxyz', you should do a request to
 
 `https://admin.woowup.com/apiv3/users?apikey=abcdefghijklmnopqrstuvwxyz`
+
+Other method, and the recomemded, is via Authentication Header, in every call you must send the header
+
+Authentication: Basic abcdefghijklmnopqrstuvwxyz
 
 Pagination
 ----------
