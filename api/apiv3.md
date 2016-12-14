@@ -35,6 +35,54 @@ Endpoints
 
 ## Users
 ### GET /users
+Search users by criteria
+
+| Parameter      | Type | Required  | Description   |
+| ------ | ------ | ------ | ------ |
+| limit | uri |  No | Items per page returned. Default 25, max 100 |
+| page | uri |  No | Number of page. First page is 0 |
+| include | uri |  No | Filter's definition in json format. |
+| exclude | uri |  No | Filter's definition in json format. |
+| search | uri |  No | Free text to find in email, first name, last name, uid, etc. |
+
+#### Response
+
+```
+{
+    "payload": [{
+      "userapp_id": 1111111,
+      "user_id": 222222,
+      "app_id": 123,
+      "service_uid": "user1@email.com",
+      "email": "user1@email.com",
+      "first_name": "Juan Miguel",
+      "last_name": "Velez",
+      "tags": ['tag1', 'tag2'],
+      "points": 494,
+      "customform": [
+        
+      ]
+    },
+    {
+      "userapp_id": 333333,
+      "user_id": 444444,
+      "app_id": 123,
+      "service_uid": "user2@email.com",
+      "email": "user2@email.com",
+      "first_name": "santiago",
+      "last_name": "carbajal",
+      "tags": null,
+      "points": 0,
+      "customform": [
+        
+      ]
+    }],
+    "message":"ok",
+    "code":"ok",
+    "time":"100ms"
+}
+```
+
 ### GET /users/{id}
 Return an user by id or service_uid
 
