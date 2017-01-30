@@ -156,11 +156,12 @@ The detail in json format should be like this:
 ```json
 [
   {
-    "codigo":"12",
-    "producto":"prod1",
-    "cantidad":2,
+    "codigo": "12",
+    "producto": "prod1",
+    "cantidad": 2,
     "precio": 10.3,
     "branch": "branch 1",
+    "categoryCode": "XFS214GW34S",
     "variations": [
       {"name": "Color", "value": "Rojo"},
       {"name": "Talle", "value": "XS"}
