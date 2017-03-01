@@ -167,7 +167,40 @@ Test if an user belongs to a segment.
 ```
 
 ### PUT /users/{id}
-not implemented yet
+
+Update an existing user
+
+| Parameter      | Required | Details                                                                                      |
+| ------ | ------ | ------ |
+| email | Yes | Email |
+| first_name | No | Name |
+| last_name | No | Last Name |
+| gender | No | F or M |
+
+
+#### Response
+
+```json
+{
+    "payload": {
+        "userapp_id": 2207258,
+        "user_id": 2192714,
+        "app_id": 123,
+        "service_uid": "user_2192714@email.com",
+        "email": "user_2192714@email.com",
+        "first_name": "first name",
+        "last_name": "last name",
+        "points": 50,
+        "customform": {
+            "dni": "123456789"
+        }
+    },
+    "message":"ok",
+    "code":"ok",
+    "time":"100ms"
+}
+```
+
 ### DELETE /users/{id}
 not implemented yet
 
