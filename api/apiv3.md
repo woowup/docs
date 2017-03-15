@@ -116,7 +116,8 @@ Return an user by id or service_uid
         "points": 50,
         "customform": {
             "dni": "123456789"
-        }
+        },
+        "club_inscription_date": "2017-01-22 18:26:16"
     },
     "message":"ok",
     "code":"ok",
