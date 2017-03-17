@@ -205,9 +205,53 @@ Update an existing user
 ### DELETE /users/{id}
 not implemented yet
 
+### POST /users
+
+Create an user
+
+| Parameter      | Required | Details                                                                                      |
+| ------ | ------ | ------ |
+| service_uid | Yes | User ID. By default is email but you can choose other (internal ID, phone, CPF / DNI / RUT / SSN) |
+| email | Yes | Email |
+| first_name | No | Name |
+| last_name | No |  |
+| telephone | No |  |
+| birthdate | No | Format: yyyy-mm-dd |
+| gender | No | Must be F or M |
+| tags | No | Comma separated tags, ex: tag1,tag2,tag3 |
+| state | No |  |
+| street | No |  |
+| country | No |  |
+| postcode | No |  |
+
+
+#### Response
+
+```json
+{
+  "payload":{
+    "userapp_id": 12345,
+    "user_id": 12345,
+    "app_id": 123,
+    "service_uid": "1122334455",
+    "email": "user@example.com",
+    "first_name": "firstname",
+    "last_name": "lastname",
+    "points": 50,
+    "customform": {
+      "cedula": "11223344"
+    },
+    "Club_inscription_date": null
+  },
+  "message":"ok",
+  "code":"ok",
+  "time":"100ms"
+}
+```
+
 ### POST /users/register
 
-Returns new registered user data.
+Create and register a new user into loyalty club
 
 | Parameter      | Required | Details                                                                                      |
 | ------ | ------ | ------ |
