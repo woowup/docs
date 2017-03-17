@@ -114,6 +114,7 @@ Return an user by id or service_uid
         "first_name": "first name",
         "last_name": "last name",
         "points": 50,
+        "points_pending": 12,
         "customform": {
             "dni": "123456789"
         },
