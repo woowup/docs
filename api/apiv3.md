@@ -347,7 +347,42 @@ Add family members to an user
 ### GET /purchases/{id}
 ### PUT /purchases/{id}
 ### DELETE /purchases/{id}
+
 ### POST /purchases
+Create a new purchase
+
+#### Request content body (JSON)
+```json
+{
+  "service_uid": "customer@email.com",  // required|string
+  "points": 24,               // integer|default:0
+  "invoice_number": "FAC-000085643",    // required|string
+  "purchase_detail": [
+    {
+      "sku": "2907362",           // required|string
+      "product_name": "Heladera Patrick", // required|string
+      "quantity": 1,            // required|integer|min:0
+      "unit_price": 1999.00,        // required|float
+      "variations": [           // list|default:[]
+        {
+          "name": "Talle",    // required|string
+          "value": "XL"   // required|string
+        }
+      ]
+    }
+  ],
+  "prices": {
+    "cost": 123.00,   // float|default:0
+    "shipping": 123.00, // float|default:0
+    "gross": 123.00,  // float|default:0
+    "tax": 123.00,    // float|default:0
+    "discount": 123.00, // float|default:0
+    "total": 123.00   // float|default:0
+  },
+  "branch_name": "Palermo I",     // string
+  "createtime": "2017-03-23 14:35:22" // string|format:yyyy-mm-dd hh:mm:ss|default:current time
+}
+```
 
 ## Mailing
 ### GET /mailings
