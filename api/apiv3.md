@@ -351,36 +351,69 @@ Add family members to an user
 ### POST /purchases
 Create a new purchase
 
-#### Request content body (JSON)
-```json
+#### Request content format
+```
 {
-  "service_uid": "customer@email.com",  /*required|string*/ 
-  "points": 24,                         /*integer|default:0*/
-  "invoice_number": "FAC-000085643",    /*required|string*/
+  "service_uid": "required|string",
+  "points": "integer|default:0",
+  "invoice_number": "required|string",
   "purchase_detail": [
     {
-      "sku": "2907362",           // required|string
-      "product_name": "Heladera Patrick", // required|string
-      "quantity": 1,            // required|integer|min:0
-      "unit_price": 1999.00,        // required|float
-      "variations": [           // list|default:[]
+      "sku": "required|string",
+      "product_name": "required|string",
+      "quantity": "required|integer|min:0",
+      "unit_price": "required|float",
+      "variations": [  list|default:[]
         {
-          "name": "Talle",    // required|string
-          "value": "XL"   // required|string
+          "name": "required|string",
+          "value": "required|string"
         }
       ]
     }
   ],
   "prices": {
-    "cost": 123.00,   // float|default:0
-    "shipping": 123.00, // float|default:0
-    "gross": 123.00,  // float|default:0
-    "tax": 123.00,    // float|default:0
-    "discount": 123.00, // float|default:0
-    "total": 123.00   // float|default:0
+    "cost": float|default:0,
+    "shipping": float|default:0,
+    "gross": float|default:0,
+    "tax": float|default:0,
+    "discount": float|default:0,
+    "total": float|default:0
   },
-  "branch_name": "Palermo I",     // string
-  "createtime": "2017-03-23 14:35:22" // string|format:yyyy-mm-dd hh:mm:ss|default:current time
+  "branch_name": "string"
+  "createtime": "string|format:yyyy-mm-dd hh:mm:ss|default:current_time"
+}
+```
+
+#### Example
+```json
+{
+  "service_uid": "customer@email.com",
+  "points": 24,
+  "invoice_number": "FAC-000085643",
+  "purchase_detail": [
+    {
+      "sku": "2907362",
+      "product_name": "Heladera Patrick",
+      "quantity": 1,
+      "unit_price": 1999.00,
+      "variations": [
+        {
+          "name": "Talle",
+          "value": "XL"
+        }
+      ]
+    }
+  ],
+  "prices": {
+    "cost": 123.00,
+    "shipping": 123.00,
+    "gross": 123.00,
+    "tax": 123.00,
+    "discount": 123.00,
+    "total": 123.00
+  },
+  "branch_name": "Palermo I",
+  "createtime": "2017-03-23 14:35:22"
 }
 ```
 
