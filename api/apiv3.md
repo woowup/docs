@@ -354,9 +354,9 @@ Create a new purchase
 #### Request content body (JSON)
 ```json
 {
-  "service_uid": "customer@email.com",  /* required|string */
-  "points": 24,               // integer|default:0
-  "invoice_number": "FAC-000085643",    // required|string
+  "service_uid": "customer@email.com",  /*required|string*/ 
+  "points": 24,                         /*integer|default:0*/
+  "invoice_number": "FAC-000085643",    /*required|string*/
   "purchase_detail": [
     {
       "sku": "2907362",           // required|string
