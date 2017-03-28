@@ -239,10 +239,8 @@ Create an user
     "first_name": "firstname",
     "last_name": "lastname",
     "points": 50,
-    "customform": {
-      "cedula": "11223344"
-    },
-    "Club_inscription_date": null
+    "customform": {},
+    "club_inscription_date": null
   },
   "message":"ok",
   "code":"ok",
@@ -333,6 +331,101 @@ Add family members to an user
 
 ## Benefits
 ### GET /benefits
+Retrieve a list of benefits separated by status
+
+| Parameter      | Type | Required  | Description   |
+| ------ | ------ | ------ | ------ |
+| currentbenefits | query |  No | Amount of benefit returned |
+| outofstockbenefits | query |  No | Amount of benefits out of stock returned |
+| comingbenefits | query |  No | Amount of coming benefits returned |
+
+#### Response
+
+```
+{
+  "payload": {
+    "current": [
+      {
+        "id": 123,
+        "slug": "cupon-prueba",
+        "title": "CUPON PRUEBA",
+        "description": "V&aacute;lido por 2 (dos) entradas (Campo) para el recital\r\n",
+        "status": "1",
+        "image_id": "13321",
+        "user_id": "1418",
+        "app_id": "123",
+        "app_code": "CONTEST",
+        "contenttype_id": "10",
+        "version": null,
+        "category_id": null,
+        "startdate": "2017-03-24 00:00:00",
+        "enddate": "2017-12-31 09:30:26",
+        "featured": "0",
+        "wallpublish": "0",
+        "monthly_redeems": "3",
+        "modified": "2017-03-21 19:37:25",
+        "created": "2017-02-22 18:49:17",
+        "image_url": "https://admin.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
+        "points": 0
+      }
+    ],
+    "outofstock": [
+      {
+        "id": 124,
+        "slug": "cupon-prueba",
+        "title": "CUPON PRUEBA",
+        "description": "V&aacute;lido por 2 (dos) entradas (Campo) para el recital\r\n",
+        "status": "1",
+        "image_id": "13321",
+        "user_id": "1418",
+        "app_id": "123",
+        "app_code": "CONTEST",
+        "contenttype_id": "10",
+        "version": null,
+        "category_id": null,
+        "startdate": "2017-03-24 00:00:00",
+        "enddate": "2017-12-31 09:30:26",
+        "featured": "0",
+        "wallpublish": "0",
+        "monthly_redeems": "3",
+        "modified": "2017-03-21 19:37:25",
+        "created": "2017-02-22 18:49:17",
+        "image_url": "https://admin.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
+        "points": 0
+      }
+    ],
+    "comingbenefits": [
+      {
+        "id": 125,
+        "slug": "cupon-prueba",
+        "title": "CUPON PRUEBA",
+        "description": "V&aacute;lido por 2 (dos) entradas (Campo) para el recital\r\n",
+        "status": "1",
+        "image_id": "13321",
+        "user_id": "1418",
+        "app_id": "123",
+        "app_code": "CONTEST",
+        "contenttype_id": "10",
+        "version": null,
+        "category_id": null,
+        "startdate": "2017-03-24 00:00:00",
+        "enddate": "2017-12-31 09:30:26",
+        "featured": "0",
+        "wallpublish": "0",
+        "monthly_redeems": "3",
+        "modified": "2017-03-21 19:37:25",
+        "created": "2017-02-22 18:49:17",
+        "image_url": "https://admin.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
+        "points": 0
+      }
+    ]
+  },
+  "message": "",
+  "code": "ok",
+  "time": "36ms"
+}
+```
+
 ### GET /benefits/{id}
 ### PUT /benefits/{id}
 ### POST /benefits/{id}/assign
