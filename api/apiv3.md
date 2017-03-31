@@ -144,6 +144,16 @@ Test if an user exist by id.
 | ------ | ------ | ------ | ------ |
 | id | uri |  Yes | User ID or encoded service_uid |
 
+#### Example
+```bash
+curl -X GET \
+    -H "Accept: application/json" \
+    -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -H "Cache-Control: no-cache" \
+    "https://admin.woowup.com/apiv3/users/12345/exist"
+```
+
 #### Response
 
 ```
@@ -190,6 +200,17 @@ Update an existing user
 | gender | No | F or M |
 
 
+#### Example
+
+```bash
+curl -X PUT \
+    -H "Accept: application/json" \
+    -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -H "Cache-Control: no-cache" \
+    -d 'email=test@email.com' "https://admin.woowup.com/apiv3/users/12345"
+```
+
 #### Response
 
 ```json
@@ -235,6 +256,16 @@ Create an user
 | country | No |  |
 | postcode | No |  |
 
+
+#### Example
+```bash
+curl -X POST \
+    -H "Accept: application/json" \
+    -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -H "Cache-Control: no-cache" \
+    -d 'service_uid=test@email.com&email=test@email.com' "https://admin.woowup.com/apiv3/users"
+```
 
 #### Response
 
