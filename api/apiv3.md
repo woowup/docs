@@ -101,6 +101,16 @@ Return an user by id or service_uid
 | ------ | ------ | ------ | ------ |
 | id | uri |  Yes | User ID or encoded service_uid |
 
+#### Example
+```bash
+curl -X GET \
+    -H "Accept: application/json" \
+    -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -H "Cache-Control: no-cache" \
+    "https://admin.woowup.com/apiv3/users/123456"
+```
+
 #### Response
 
 ```
