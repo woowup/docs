@@ -194,7 +194,8 @@ Update an existing user
 
 | Parameter      | Required | Details                                                                                      |
 | ------ | ------ | ------ |
-| email | Yes | Email |
+| service_uid | No | User identificator |
+| email | No | Email |
 | first_name | No | Name |
 | last_name | No | Last Name |
 | gender | No | F or M |
@@ -206,9 +207,9 @@ Update an existing user
 curl -X PUT \
     -H "Accept: application/json" \
     -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
-    -H "Content-Type: application/x-www-form-urlencoded" \
+    -H "Content-Type: application/json" \
     -H "Cache-Control: no-cache" \
-    -d 'email=test@email.com' "https://admin.woowup.com/apiv3/users/12345"
+    -d '{"email": "test@gmail2.com", "service_uid": "test@gmail2.com", "gender": "F"}' "https://admin.woowup.com/apiv3/users/12345"
 ```
 
 #### Response
@@ -364,6 +365,47 @@ Add family members to an user
 ```json
 {
   "payload": {},
+  "message": "ok",
+  "code": "ok",
+  "time": "100ms"
+}
+```
+
+### POST /users/{id}/points
+Add/substract points to user
+
+| Parameter | Required  | Description   |
+| ------ | ------ | ------ |
+| concept |  Yes | Concept why you are adding points to user. Must be: purchase, gift, survey_response, register or referrer |
+| points |  Yes | Points to be added (could be less than zero) |
+| description | Yes | Description why you are adding points to user |
+
+#### JSON Request Format
+```json
+    {
+        "concept": "purchase|gift|survey_response|register|referrer",
+        "points": "integer",
+        "description": "string"
+    }
+```
+
+#### Example
+```bash
+curl -X POST \
+    -H "Accept: application/json" \
+    -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
+    -H "Content-Type: application/json" \
+    -H "Cache-Control: no-cache" \
+    -d '{"concept": "gift", "points": "2123", "description": "test"}' "https://admin.woowup.com/apiv3/users/123456/points"
+```
+
+#### Response
+
+```json
+{
+  "payload": {
+    "transaction_id": 12345
+  },
   "message": "ok",
   "code": "ok",
   "time": "100ms"
