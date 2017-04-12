@@ -593,6 +593,43 @@ Create a new purchase
 }
 ```
 
+```bash
+curl -X POST \
+  https://admin.woowup.com/apiv3/purchases \
+  -H 'accept: application/json' \
+  -H 'authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' \
+  -H 'cache-control: no-cache' \
+  -d '{
+  "service_uid": "test@example.com",
+  "points": 24,
+  "invoice_number": "FAC-123456789",
+  "purchase_detail": [
+    {
+      "sku": "12345",
+      "product_name": "Heladera Patrick",
+      "quantity": 1,
+      "unit_price": 1999.00,
+      "variations": [
+        {
+          "name": "Litros",
+          "value": "200"
+        }
+      ]
+    }
+  ],
+  "prices": {
+    "cost": 123.00,
+    "shipping": 123.00,
+    "gross": 123.00,
+    "tax": 123.00,
+    "discount": 123.00,
+    "total": 123.00
+  },
+  "branch_name": "Palermo I",
+  "createtime": "2017-03-23 14:35:22"
+}'
+```
+
 ## Mailing
 ### GET /mailings
 ### GET /mailings/{id}
