@@ -123,12 +123,19 @@ curl -X GET \
         "email": "user_2192714@email.com",
         "first_name": "first name",
         "last_name": "last name",
+        "telephone": "+1 123 4567 890",
+        "birthday": "1989-06-22",
+        "gender": "M",
         "points": 50,
         "points_pending": 12,
         "customform": {
             "dni": "123456789"
         },
-        "club_inscription_date": "2017-01-22 18:26:16"
+        "club_inscription_date": "2017-01-22 18:26:16",
+        "blocked": false,
+        "notes": "is a good customer",
+        "mailing_enabled": true,
+        "mailing_enabled_reason": null
     },
     "message":"ok",
     "code":"ok",
