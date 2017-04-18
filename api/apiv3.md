@@ -206,6 +206,8 @@ Update an existing user
 | first_name | No | Name |
 | last_name | No | Last Name |
 | gender | No | F or M |
+| telephone | No | Telephone number |
+| birthday | No | Format: yyyy-mm-dd | 
 
 
 #### Example
@@ -216,7 +218,7 @@ curl -X PUT \
     -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
     -H "Content-Type: application/json" \
     -H "Cache-Control: no-cache" \
-    -d '{"email": "test@gmail2.com", "service_uid": "test@gmail2.com", "gender": "F"}' "https://admin.woowup.com/apiv3/users/12345"
+    -d '{"email": "test@gmail2.com", "service_uid": "test@gmail2.com", "gender": "F", "telephone": "123456789", "birthday": "1980-04-22"}' "https://admin.woowup.com/apiv3/users/12345"
 ```
 
 #### Response
