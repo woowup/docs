@@ -440,7 +440,7 @@ curl -X GET \
   -H 'cache-control: no-cache'
 ```
 
-#### Response
+### Response
 
 ```
 {
@@ -448,12 +448,12 @@ curl -X GET \
     "current": [
       {
         "id": 123,
-        "slug": "cupon-prueba",
-        "title": "CUPON PRUEBA",
-        "description": "V&aacute;lido por 2 (dos) entradas (Campo) para el recital\r\n",
+        "slug": "benefit-1-title",
+        "title": "Benefit 1 title",
+        "description": "Benefit 1 description",
         "status": "1",
-        "image_id": "13321",
-        "user_id": "1418",
+        "image_id": "1234",
+        "user_id": "1234",
         "app_id": "123",
         "app_code": "CONTEST",
         "contenttype_id": "10",
@@ -473,12 +473,12 @@ curl -X GET \
     "outofstock": [
       {
         "id": 124,
-        "slug": "cupon-prueba",
-        "title": "CUPON PRUEBA",
-        "description": "V&aacute;lido por 2 (dos) entradas (Campo) para el recital\r\n",
+        "slug": "benefit-2-title",
+        "title": "Benefit 2 title",
+        "description": "Benefit 2 description",
         "status": "1",
-        "image_id": "13321",
-        "user_id": "1418",
+        "image_id": "1234",
+        "user_id": "1234",
         "app_id": "123",
         "app_code": "CONTEST",
         "contenttype_id": "10",
@@ -498,12 +498,12 @@ curl -X GET \
     "comingbenefits": [
       {
         "id": 125,
-        "slug": "cupon-prueba",
-        "title": "CUPON PRUEBA",
-        "description": "V&aacute;lido por 2 (dos) entradas (Campo) para el recital\r\n",
+        "slug": "benefit-3-title",
+        "title": "Beneift 3 title",
+        "description": "Benefit 3 description",
         "status": "1",
-        "image_id": "13321",
-        "user_id": "1418",
+        "image_id": "1234",
+        "user_id": "1234",
         "app_id": "123",
         "app_code": "CONTEST",
         "contenttype_id": "10",
@@ -541,6 +541,87 @@ curl -X GET \
 ### POST /benefits/{id}/assign
 ### DELETE /benefits/{id}
 ### POST /benefits
+
+
+## Coupons
+### GET /coupons (UNIMPLEMENTED YET)
+Retrieve a list of redeemed coupons ordered by assign_date desc
+
+| Parameter      | Type | Required  | Description   |
+| ------ | ------ | ------ | ------ |
+| limit | query |  No | Items per page returned. Default: 25, Max: 100 |
+| page | query |  No | Number of the page returned. Default: 0   |
+| from | query |  No | Min assign_date of the returned coupons. Format: yyyy-mm-dd hh:mm:ss (in UTC timezone)|
+| to | query |  No | Max assign_date of the returned coupons . Format: yyyy-mm-dd hh:mm:ss (in UTC timezone)|
+
+### Example
+```
+curl -X GET \
+  'https://admin.woowup.com/apiv3/coupons?limit=100&page=0&from=2017-01-01%2000%3A00%3A00&to=2017-05-31%2023%3A59%3A59' \
+  -H 'accept: application/json' \
+  -H 'authorization: Basic XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
+  -H 'cache-control: no-cache'
+```
+
+
+### Example
+
+### Response
+```
+[
+    {
+        "id": 1234,
+        "code": "ASE34AWVS21",
+        "assign_date": "2017-05-10 14:32:12",
+        "user": {
+            "userapp_id": 1234,
+            "user_id": 1234,
+            "app_id": 123,
+            "service_uid": "98765",
+            "email": "user@email.com",
+            "first_name": "John",
+            "last_name": "Doe",
+            "telephone": "5411987654321",
+            "birthday": "1986-08-13",
+            "gender": "M",
+            "tags": [],
+            "points": 0,
+            "points_pending": 0,
+            "customform": {
+                "user_id": "98765"
+            },
+            "club_inscription_date": "2017-01-03",
+            "blocked": false,
+            "notes": "user notes",
+            "mailing_enabled": true,
+            "mailing_enabled_reason": null
+        },
+        "benefit": {
+            "id": 1234,
+            "slug": "benefit-1-title",
+            "title": "Benefit 1 title",
+            "description": "Benefit 1 description",
+            "terms": "Terms and condition",
+            "on_assign_msg": "After assign message",
+            "status": 1,
+            "app_id": 123,
+            "startdate": "2017-04-20 14:51:00",
+            "enddate": "2017-05-17 19:34:25",
+            "action_id": 5678,
+            "image_url": "https://admin.woowup.com/image.png"
+        }
+    }
+]
+```
+
+### HTTP Response codes
+| HTTP Code      | Name | Description |
+| ------ | ------ | ------ |
+| 200 | ok | Successful request |
+| 400 | bad request | Invalid parameters format |
+| 403 | forbidden | Invalid or inexistent apikey |
+| 405 | method not allowed | Use an invalid http verb in the request |
+| 500 | server error | Internal error, explained in the json response |
 
 ## Transactions
 ### GET /transactions
