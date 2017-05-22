@@ -427,9 +427,18 @@ Retrieve a list of benefits separated by status
 
 | Parameter      | Type | Required  | Description   |
 | ------ | ------ | ------ | ------ |
-| currentbenefits | query |  No | Amount of benefit returned |
+| currentbenefits | query |  No | Amount of benefits available for redeem returned |
 | outofstockbenefits | query |  No | Amount of benefits out of stock returned |
 | comingbenefits | query |  No | Amount of coming benefits returned |
+
+### Example
+```
+curl -X GET \
+  'https://admin.woowup.com/apiv3/benefits?outofstockbenefits=1000&comingbenefits=1000&currentbenefits=1000' \
+  -H 'accept: application/json' \
+  -H 'authorization: Basic XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
+  -H 'cache-control: no-cache'
+```
 
 #### Response
 
@@ -517,6 +526,15 @@ Retrieve a list of benefits separated by status
   "time": "36ms"
 }
 ```
+
+### HTTP Response codes
+| HTTP Code      | Name | Description |
+| ------ | ------ | ------ |
+| 200 | ok | Successful request |
+| 400 | bad request | Invalid parameters |
+| 403 | forbidden | Invalid or inexistent apikey |
+| 405 | method not allowed | Use an invalid http verb in the request |
+| 500 | server error | Internal error, explained in the json response |
 
 ### GET /benefits/{id}
 ### PUT /benefits/{id}
