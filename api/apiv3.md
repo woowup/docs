@@ -467,7 +467,8 @@ curl -X GET \
         "modified": "2017-03-21 19:37:25",
         "created": "2017-02-22 18:49:17",
         "image_url": "https://admin.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
-        "points": 0
+        "points": 0,
+        "event_date": "2017-06-02 18:00:00"
       }
     ],
     "outofstock": [
@@ -492,7 +493,8 @@ curl -X GET \
         "modified": "2017-03-21 19:37:25",
         "created": "2017-02-22 18:49:17",
         "image_url": "https://admin.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
-        "points": 0
+        "points": 0,
+        "event_date": "2017-06-02 18:00:00"
       }
     ],
     "comingbenefits": [
@@ -517,7 +519,8 @@ curl -X GET \
         "modified": "2017-03-21 19:37:25",
         "created": "2017-02-22 18:49:17",
         "image_url": "https://admin.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
-        "points": 0
+        "points": 0,
+        "event_date": "2017-06-02 18:00:00"
       }
     ]
   },
@@ -544,7 +547,7 @@ curl -X GET \
 
 
 ## Coupons
-### GET /coupons (UNIMPLEMENTED YET)
+### GET /coupons
 Retrieve a list of redeemed coupons ordered by assign_date desc
 
 | Parameter      | Type | Required  | Description   |
