@@ -10,7 +10,7 @@ For example, if in your app you have an user with the identificator = 0014823, y
 curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Content-Type: application/json' \
-  "https://admin.woowup.com/apiv2/98765/is_user?service=1&service_uid=0014823"
+  "https://api.woowup.com/apiv2/98765/is_user?service=1&service_uid=0014823"
 ```
 
 | Parameter   | Description               |
@@ -36,7 +36,7 @@ Then, in case you got the user does not exist, you have to do a POST request to 
 curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -d 'uid=0014823&pass=1234&email=johndoe@gmail.com&first_name=john&last_name=doe' \
-  https://admin.woowup.com/apiv2/98765/register_user_classic
+  https://api.woowup.com/apiv2/98765/register_user_classic
 ```
 
 The POST method to use is **/register_user_classic**
@@ -91,7 +91,7 @@ Next step, you'll need to complete the registration form defined in your adminis
 curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -d 'email=johndoe@gmail.com' \
-  https://admin.woowup.com/apiv2/98765/save_cf/?userapp_id=1234521
+  https://api.woowup.com/apiv2/98765/save_cf/?userapp_id=1234521
 ```
 The response will be:
 ```json
@@ -109,7 +109,7 @@ If you want to have more information about your user before adding him points, y
 curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Content-Type: application/json' \
-  https://admin.woowup.com/apiv2/98765/user_by_uid?uid=0014823
+  https://api.woowup.com/apiv2/98765/user_by_uid?uid=0014823
 ```
 
 | Parameter   | Description               |
@@ -122,7 +122,7 @@ Or:
 curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Content-Type: application/json' \
-  https://admin.woowup.com/apiv2/98765/user_by_email?email=johndoe@gmail.com
+  https://api.woowup.com/apiv2/98765/user_by_email?email=johndoe@gmail.com
 ```
 
 | Parameter   | Description               |
@@ -175,7 +175,7 @@ curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Accept: application/json' \
   -d 'userapp_id=13247&points=120&concept="Donating"' \
-  https://admin.woowup.com/apiv2/98765/add_points
+  https://api.woowup.com/apiv2/98765/add_points
 ```
 
 The POST method to use is **/add_points**
@@ -212,7 +212,7 @@ curl -H 'Username: 98765' \
   -H 'Apikey: .....' \
   -H 'Accept: application/json' \
   -d 'userapp_id=13247&points=120&concept="Donating"' \
-  https://admin.woowup.com/apiv2/98765/add_points_by_uid
+  https://api.woowup.com/apiv2/98765/add_points_by_uid
 ```
 
 |  Parameter | Required | Description  |

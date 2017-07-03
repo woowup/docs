@@ -9,7 +9,7 @@ In any call to the API you must sent the apikey in the query string as a paramet
 
 So, for example, if your apikey is 'abcdefghijklmnopqrstuvwxyz', you should do a request to
 
-`https://admin.woowup.com/apiv3/users?apikey=abcdefghijklmnopqrstuvwxyz`
+`https://api.woowup.com/apiv3/users?apikey=abcdefghijklmnopqrstuvwxyz`
 
 Other method, and the recomemded, is via Authentication Header, in every call you must send the header
 
@@ -38,7 +38,7 @@ When you are trying to  find an user you could identificate this by his id or hi
 ```php
 $service_uid = 'example@email.com';
 $encoded_uid = urlencode(base64_encode($service_uid));
-$url = 'https://admin.woowup.com/apiv3/users/'.$encoded_uid.'/exists';
+$url = 'https://api.woowup.com/apiv3/users/'.$encoded_uid.'/exists';
 ```
 
 Endpoints
@@ -108,7 +108,7 @@ curl -X GET \
     -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
     -H "Content-Type: application/x-www-form-urlencoded" \
     -H "Cache-Control: no-cache" \
-    "https://admin.woowup.com/apiv3/users/123456"
+    "https://api.woowup.com/apiv3/users/123456"
 ```
 
 #### Response
@@ -158,7 +158,7 @@ curl -X GET \
     -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
     -H "Content-Type: application/x-www-form-urlencoded" \
     -H "Cache-Control: no-cache" \
-    "https://admin.woowup.com/apiv3/users/12345/exist"
+    "https://api.woowup.com/apiv3/users/12345/exist"
 ```
 
 #### Response
@@ -218,7 +218,7 @@ curl -X PUT \
     -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
     -H "Content-Type: application/json" \
     -H "Cache-Control: no-cache" \
-    -d '{"email": "test@gmail2.com", "service_uid": "test@gmail2.com", "gender": "F", "telephone": "123456789", "birthday": "1980-04-22"}' "https://admin.woowup.com/apiv3/users/12345"
+    -d '{"email": "test@gmail2.com", "service_uid": "test@gmail2.com", "gender": "F", "telephone": "123456789", "birthday": "1980-04-22"}' "https://api.woowup.com/apiv3/users/12345"
 ```
 
 #### Response
@@ -274,7 +274,7 @@ curl -X POST \
     -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
     -H "Content-Type: application/x-www-form-urlencoded" \
     -H "Cache-Control: no-cache" \
-    -d 'service_uid=test@email.com&email=test@email.com' "https://admin.woowup.com/apiv3/users"
+    -d 'service_uid=test@email.com&email=test@email.com' "https://api.woowup.com/apiv3/users"
 ```
 
 #### Response
@@ -405,7 +405,7 @@ curl -X POST \
     -H "Authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
     -H "Content-Type: application/json" \
     -H "Cache-Control: no-cache" \
-    -d '{"concept": "gift", "points": "2123", "description": "test"}' "https://admin.woowup.com/apiv3/users/123456/points"
+    -d '{"concept": "gift", "points": "2123", "description": "test"}' "https://api.woowup.com/apiv3/users/123456/points"
 ```
 
 #### Response
@@ -434,7 +434,7 @@ Retrieve a list of benefits separated by status
 ### Example
 ```
 curl -X GET \
-  'https://admin.woowup.com/apiv3/benefits?outofstockbenefits=1000&comingbenefits=1000&currentbenefits=1000' \
+  'https://api.woowup.com/apiv3/benefits?outofstockbenefits=1000&comingbenefits=1000&currentbenefits=1000' \
   -H 'accept: application/json' \
   -H 'authorization: Basic XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
   -H 'cache-control: no-cache'
@@ -466,7 +466,7 @@ curl -X GET \
         "monthly_redeems": "3",
         "modified": "2017-03-21 19:37:25",
         "created": "2017-02-22 18:49:17",
-        "image_url": "https://admin.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
+        "image_url": "https://api.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
         "points": 0,
         "event_date": "2017-06-02 18:00:00"
       }
@@ -492,7 +492,7 @@ curl -X GET \
         "monthly_redeems": "3",
         "modified": "2017-03-21 19:37:25",
         "created": "2017-02-22 18:49:17",
-        "image_url": "https://admin.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
+        "image_url": "https://api.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
         "points": 0,
         "event_date": "2017-06-02 18:00:00"
       }
@@ -518,7 +518,7 @@ curl -X GET \
         "monthly_redeems": "3",
         "modified": "2017-03-21 19:37:25",
         "created": "2017-02-22 18:49:17",
-        "image_url": "https://admin.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
+        "image_url": "https://api.woowup.com/uploads/1234567/qwerty-adfg-zcv-iuytr-vbnmjhgfd.png",
         "points": 0,
         "event_date": "2017-06-02 18:00:00"
       }
@@ -560,7 +560,7 @@ Retrieve a list of redeemed coupons ordered by assign_date desc
 ### Example
 ```
 curl -X GET \
-  'https://admin.woowup.com/apiv3/coupons?limit=100&page=0&from=2017-01-01%2000%3A00%3A00&to=2017-05-31%2023%3A59%3A59' \
+  'https://api.woowup.com/apiv3/coupons?limit=100&page=0&from=2017-01-01%2000%3A00%3A00&to=2017-05-31%2023%3A59%3A59' \
   -H 'accept: application/json' \
   -H 'authorization: Basic XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
   -H 'cache-control: no-cache'
@@ -611,7 +611,7 @@ curl -X GET \
             "startdate": "2017-04-20 14:51:00",
             "enddate": "2017-05-17 19:34:25",
             "action_id": 5678,
-            "image_url": "https://admin.woowup.com/image.png"
+            "image_url": "https://api.woowup.com/image.png"
         }
     }
 ]
@@ -706,7 +706,7 @@ Create a new purchase
 
 ```bash
 curl -X POST \
-  https://admin.woowup.com/apiv3/purchases \
+  https://api.woowup.com/apiv3/purchases \
   -H 'accept: application/json' \
   -H 'authorization: Basic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' \
   -H 'cache-control: no-cache' \

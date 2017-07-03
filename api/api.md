@@ -552,7 +552,7 @@ Create or update (if the code already exists) a product in WoowUp
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -H "Username: {APP_ID}" -H "Apikey: {API_KEY}" -H "Accept: application/json" -H "Cache-Control: no-cache" \
-"https://admin.woowup.com/apiv2/XXX/save_product?code=123&name=soap&category_id=23&thumbnail_url=http://img.com/thumbnail.jpg&image_url=http://img.com/thumbnail.jpg&url=http://my-ecommerce.com/123/soap&cost=15.8"
+"https://api.woowup.com/apiv2/XXX/save_product?code=123&name=soap&category_id=23&thumbnail_url=http://img.com/thumbnail.jpg&image_url=http://img.com/thumbnail.jpg&url=http://my-ecommerce.com/123/soap&cost=15.8"
 ```
 
 #### Response
@@ -606,7 +606,7 @@ This is an example of the json format of the categories
 ```shell
 curl -X POST -H "Content-Type: application/json" -H "Username: {APP_ID}" -H "Apikey: {API_KEY}" -H "Accept: application/json" -H "Cache-Control: no-cache" \
 -d "[{"id": 1, "name": "RopaMujer", "children": [{"id": 2, "name": "Polleras", "children": null}, {"id": 3, "name": "Minifaldas", "children": null}]}, {"id": 4, "name": "RopaHombre", "children": null}]" \
-"https://admin.woowup.com/apiv2/{APP_ID}/save_category_tree"
+"https://api.woowup.com/apiv2/{APP_ID}/save_category_tree"
 ```
 
 #### Response
@@ -642,7 +642,7 @@ curl -X POST -H "Content-Type: application/json" -H "Username: {APP_ID}" -H "Api
     "to": ["user1@email.com", "user2@email.com"],
     "subject": "email subject",
     "body": "email body"
-}' "https://admin.woowup.com/apiv2/XXX/send_transactional_email"
+}' "https://api.woowup.com/apiv2/XXX/send_transactional_email"
 ```
 
 
